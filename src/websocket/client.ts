@@ -118,6 +118,24 @@ export class KOCWebsocketClient {
   }
 
   /**
+   * Disconnect from the Server.
+   */
+  public disconnect(): Promise<void> {
+    if (!this.connection) {
+      throw Error('Not connected, connect first.');
+    }
+
+    return new Promise((resolve) => {
+      this.connection!.on('close', () => {
+        this.connection = undefined;
+        resolve();
+      })
+
+      this.connection!.close()
+    });
+  }
+
+  /**
    * Connect to the Server.
    *
    * @param token The bearer token to authenticate against the server with.
