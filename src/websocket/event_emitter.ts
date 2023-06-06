@@ -2,7 +2,7 @@ type EventsMap = {
   [event: string]: any
 }
 
-type Unsubscribe = {
+export type EventUnsubscribe = {
   (): void
 }
 
@@ -16,7 +16,7 @@ export class EventEmitter<Events extends EventsMap> {
    * @param callback The listener function.
    * @returns Unbind listener from event.
    */
-  public on<K extends keyof Events>(event: K, callback: Events[K]): Unsubscribe {
+  public on<K extends keyof Events>(event: K, callback: Events[K]): EventUnsubscribe {
     if (this.events[event] === undefined) {
       this.events[event] = [callback]
     }

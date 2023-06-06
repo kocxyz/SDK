@@ -3,7 +3,7 @@ import { client as WebsocketClient, connection as Connection } from 'websocket';
 
 import type { KOCServerUrl } from '../types/connection';
 import type { KOCClientEvent, KOCEvent, KOCServerEvent } from '../types/events';
-import { EventEmitter } from './event_emitter'
+import { EventEmitter, EventUnsubscribe } from './event_emitter'
 import { emitUserPingData, emitUserPresence } from './emitter';
 
 type OfUnion<T extends KOCEvent> = {
@@ -71,8 +71,30 @@ export class KOCWebsocketClient {
    * 
    * @returns Unbind listener from event.
    */
-  public on<Event extends keyof EmitterEvents<KOCServerEvent>>(event: Event, callback: EmitterEvents<KOCServerEvent>[Event]) {
+  public on<Event extends keyof EmitterEvents<KOCServerEvent>>(
+    event: Event,
+    callback: EmitterEvents<KOCServerEvent>[Event]
+  ): EventUnsubscribe {
     return this.emitter.on(event, callback)
+  }
+
+  /**
+   * Add a listener for a given event that only gets invoked once.
+   * 
+   * @param event The event type to listen to.
+   * @param callback The callback when the event is emitted.
+   * 
+   * @returns Unbind listener from event.
+   */
+  public once<Event extends keyof EmitterEvents<KOCServerEvent>>(
+    event: Event,
+    callback: EmitterEvents<KOCServerEvent>[Event]
+  ): EventUnsubscribe {
+    const unbind = this.emitter.on(event, (data: any) => {
+      unbind()
+      callback(data)
+    })
+    return unbind
   }
 
   /**
