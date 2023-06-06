@@ -4,7 +4,6 @@ import { client as WebsocketClient, connection as Connection } from 'websocket';
 import type { KOCServerUrl } from '../types/connection';
 import type { KOCClientEvent, KOCEvent, KOCServerEvent } from '../types/events';
 import { EventEmitter, EventUnsubscribe } from './event_emitter'
-import { emitUserPingData, emitUserPresence } from './emitter';
 
 type OfUnion<T extends KOCEvent> = {
   [P in T['type']]: Extract<T, { type: P }>
@@ -160,11 +159,6 @@ export class KOCWebsocketClient {
       this.client.on('connect', (connection) => {
         this.connection = connection;
 
-        setInterval(async () => {
-          await emitUserPingData(this, { regions: [] });
-          await emitUserPresence(this, { presenceState: 5, richPresenceState: 0 });
-        }, 10000);
-
         connection.on('message', (data) => {
           if (data.type === 'utf8') {
             const message: unknown = JSON.parse(data.utf8Data)
@@ -193,6 +187,11 @@ export class KOCWebsocketClient {
         connection.on('close', () => {
           this.connection = undefined
         })
+
+        // Listen to the welcome event so we know the server
+        // knows we are connected and we can start emitting
+        // events as well
+        this.once('_welcome', () => resolve())
       });
 
       this.client.connect(`${this.address}/`, [], undefined, headers);
