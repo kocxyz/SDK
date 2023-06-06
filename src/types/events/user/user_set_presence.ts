@@ -1,7 +1,38 @@
 import { KOCEvent } from "../event"
 
-export type PresenceState = 5;
-export type RichPresenceState = 0;
+export type PresenceState =
+  // Appear Offline
+  | 1
+  // Online (Rich Presence has no effect)
+  | 2
+  // Not Joinable
+  | 3
+  // Joinable but full?
+  | 4
+  // Joinable
+  | 5
+
+export type RichPresenceState =
+  // Hideout (Solo)
+  | 0
+  // Hideout (Group)
+  | 1
+  // Street Play (Solo)
+  | 2
+  // Street Play (Group)
+  | 3
+  // League Play (Solo)
+  | 4
+  // League Play (Group)
+  | 5
+  // Private Match (Solo)
+  | 6
+  // Private Match (Group)
+  | 7
+  // Training (Solo)
+  | 8
+  // Training (Group)
+  | 9
 
 export type KOCUserSetPresenceClientEvent = KOCEvent & {
   type: '_user_set_presence',
