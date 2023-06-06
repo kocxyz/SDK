@@ -141,6 +141,10 @@ export class KOCWebsocketClient {
    * @param token The bearer token to authenticate against the server with.
    */
   public connect(token: String): Promise<void> {
+    if (this.connection) {
+      throw Error('Already connected, disconnect first.');
+    }
+
     const headers = {
       Authorization: `Bearer ${token}`,
       'game-executable-version': this.gameExecutableVersion,
@@ -186,7 +190,9 @@ export class KOCWebsocketClient {
           }
         });
 
-        resolve();
+        connection.on('close', () => {
+          this.connection = undefined
+        })
       });
 
       this.client.connect(`${this.address}/`, [], undefined, headers);
