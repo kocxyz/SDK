@@ -1,3 +1,4 @@
+import { KOCUserId } from "../../user"
 import { KOCEvent } from "../event"
 
 export type KOCPersistenceGetUserPairsServerEvent = KOCEvent & {
@@ -7,9 +8,7 @@ export type KOCPersistenceGetUserPairsServerEvent = KOCEvent & {
 }
 
 type UsersEntry = {
-  user_id: {
-    velan: number
-  },
+  user_id: KOCUserId,
   pairs: {
     equipment_data_initialized: `${number}`,
     last_seen_event_day: `${number}`,

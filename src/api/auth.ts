@@ -1,16 +1,15 @@
 import axios from 'axios';
 import type { KOCServerUrl } from '../types/connection';
+import { KOCPersonaId, KOCUserId } from '../types/user';
 
 type User = {
-  id: {
-    velan: number;
-  };
+  id: KOCUserId;
   auth_provider: 'dev';
   username: String;
   publisher_username: String;
   publisher_username_code: Number;
   publisher_id: { invalid: 0 | 1 };
-  persona_id: { privsrv: 0 };
+  persona_id: KOCPersonaId;
 };
 
 type AuthenticateResponse = {

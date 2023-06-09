@@ -1,5 +1,6 @@
 import { UUID } from "crypto"
 import { KOCEvent } from "../event"
+import { KOCUserId } from "../../user"
 
 export type KOCRecentPlayersGetServerEvent = KOCEvent & {
   type: "_recent_players_get",
@@ -9,9 +10,7 @@ export type KOCRecentPlayersGetServerEvent = KOCEvent & {
 }
 
 type KOCRecentPlayerEntry = {
-  user_id: {
-    velan: number
-  },
+  user_id: KOCUserId,
   username: string,
   username_visible: boolean,
   publisher_username: string,
