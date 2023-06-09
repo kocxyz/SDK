@@ -6,7 +6,8 @@ export type KOCFriendsGetServerEvent = KOCEvent & {
   type: "_friends_get",
   full_update: boolean,
   full_list: boolean,
-  update: KOCFriendEntry[]
+  update?: KOCFriendEntry[]
+  remove?: KOCUserId[]
 }
 
 type KOCFriendEntry = {

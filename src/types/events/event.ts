@@ -1,46 +1,89 @@
-import type {
-  KOCUserPingDataClientEvent,
-  KOCUserSetPresenceClientEvent,
-  KOCRelayGroupInviteClientEvent,
-  KOCBlocksGetServerEvent,
-  KOCBrawlPassGetServerEvent,
-  KOCCommerceCatalogUpdateServerEvent,
-  KOCCommerceInventoryUpdateServerEvent,
-  KOCContractProgressGetServerEvent,
-  KOCCrewsGetServerEvent,
-  KOCCrewInvitesGetServerEvent,
-  KOCFriendRequestsGetServerEvent,
-  KOCFriendsGetServerEvent,
-  KOCNewsServerEvent,
-  KOCRecentPlayersGetServerEvent,
-  KOCStreetRankUpdateServerEvent,
-  KOCSetUserQuitPenaltyServerEvent,
-  KOCPersistenceGetUserPairsServerEvent,
-  KOCWelcomeServerEvent,
-} from ".";
+import type * as KOCEvents from ".";
 
 export type KOCEvent = {
   type: `_${string}`;
 }
 
 export type KOCClientEvent =
-  | KOCUserPingDataClientEvent
-  | KOCUserSetPresenceClientEvent
-  | KOCRelayGroupInviteClientEvent
+  // Block
+  | KOCEvents.KOCBlockPlayerClientEvent
+  | KOCEvents.KOCUnblockPlayerClientEvent
+  // Commerce
+  | KOCEvents.KOCCommerceGetCrewInventoryClientEvent
+  | KOCEvents.KOCCommerceInventoryEquipClientEvent
+  // Crew
+  | KOCEvents.KOCCrewRequestInfoClientEvent
+  | KOCEvents.KOCCrewsAcceptInviteClientEvent
+  | KOCEvents.KOCCrewsAcceptJoinRequestClientEvent
+  | KOCEvents.KOCCrewsChangeNameClientEvent
+  | KOCEvents.KOCCrewsCreateClientEvent
+  | KOCEvents.KOCCrewsLeaveClientEvent
+  | KOCEvents.KOCCrewsRejectInviteClientEvent
+  | KOCEvents.KOCCrewsRejectJoinRequestClientEvent
+  | KOCEvents.KOCCrewsSendInviteClientEvent
+  | KOCEvents.KOCCrewsSendJoinRequestClientEvent
+  // Friends
+  | KOCEvents.KOCFriendsAcceptRequestClientEvent
+  | KOCEvents.KOCFriendsRejectRequestClientEvent
+  | KOCEvents.KOCFriendsRemoveClientEvent
+  | KOCEvents.KOCFriendsSendRequestClientEvent
+  // Group
+  | KOCEvents.KOCGroupJoinClientEvent
+  | KOCEvents.KOCGroupKickClientEvent
+  | KOCEvents.KOCGroupPromoteLeaderClientEvent
+  // Matchmaking
+  | KOCEvents.KOCMatchmakingStartGameSearchClientEvent
+  // Relay
+  | KOCEvents.KOCRelayClientEvent
+  // User
+  | KOCEvents.KOCPersistenceSetUserPairsClientEvent
+  | KOCEvents.KOCUserPingDataClientEvent
+  | KOCEvents.KOCUserSetPresenceClientEvent
+  | KOCEvents.KOCUserRequestSocialPresenceClientEvent
+  | KOCEvents.KOCUserRequestPlaylistUpdateClientEvent
 
 export type KOCServerEvent =
-  | KOCBlocksGetServerEvent
-  | KOCBrawlPassGetServerEvent
-  | KOCCommerceCatalogUpdateServerEvent
-  | KOCCommerceInventoryUpdateServerEvent
-  | KOCContractProgressGetServerEvent
-  | KOCCrewsGetServerEvent
-  | KOCCrewInvitesGetServerEvent
-  | KOCFriendsGetServerEvent
-  | KOCFriendRequestsGetServerEvent
-  | KOCNewsServerEvent
-  | KOCRecentPlayersGetServerEvent
-  | KOCStreetRankUpdateServerEvent
-  | KOCSetUserQuitPenaltyServerEvent
-  | KOCPersistenceGetUserPairsServerEvent
-  | KOCWelcomeServerEvent
+  // Blocks
+  | KOCEvents.KOCBlocksGetServerEvent
+  // Brawl Pass
+  | KOCEvents.KOCBrawlPassGetServerEvent
+  // Cohorts
+  | KOCEvents.KOCCohortsServerEvent
+  // Commerce
+  | KOCEvents.KOCCommerceCatalogUpdateServerEvent
+  | KOCEvents.KOCCommerceCrewInventoryUpdateServerEvent
+  | KOCEvents.KOCCommerceInventoryUpdateServerEvent
+  // Contract
+  | KOCEvents.KOCContractProgressGetServerEvent
+  // Crew
+  | KOCEvents.KOCCrewsGetServerEvent
+  | KOCEvents.KOCCrewJoinRequestsGetServerEvent
+  | KOCEvents.KOCCrewsSearchResultServerEvent
+  | KOCEvents.KOCCrewInvitesGetServerEvent
+  // Friends
+  | KOCEvents.KOCFriendsGetServerEvent
+  | KOCEvents.KOCFriendRequestsGetServerEvent
+  // Groups
+  | KOCEvents.KOCGroupGetServerEvent
+  | KOCEvents.KOCGroupKickedServerEvent
+  | KOCEvents.KOCGroupLeftServerEvent
+  // Matchmaking
+  | KOCEvents.KOCMatchmakingAdvertiseServerServerEvent
+  | KOCEvents.KOCMatchmakingStatusReportServerEvent
+  // News
+  | KOCEvents.KOCNewsServerEvent
+  // Ping
+  | KOCEvents.KOCPingDisplayValuesServerEvent
+  // Players
+  | KOCEvents.KOCRecentPlayersGetServerEvent
+  // Replay
+  | KOCEvents.KOCRelayServerEvent
+  // Street Rank
+  | KOCEvents.KOCStreetRankUpdateServerEvent
+  // User
+  | KOCEvents.KOCSetUserQuitPenaltyServerEvent
+  | KOCEvents.KOCPersistenceGetUserPairsServerEvent
+  // Error
+  | KOCEvents.KOCErrorServerEvent
+  // Welcome
+  | KOCEvents.KOCWelcomeServerEvent

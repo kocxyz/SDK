@@ -1,3 +1,4 @@
+import { KOCGroupVisibility } from "../../group"
 import { KOCUserId } from "../../user"
 import { KOCEvent } from "../event"
 
@@ -24,6 +25,7 @@ type UsersEntry = {
     "tutorial_3_complete.or": `${number}`,
     "tutorial_4_complete.or": `${number}`,
     "tutorial_5_complete.or": `${number}`,
-    selected_character_index: `${0 | 1 | 2 | 3 | 4 | 5}`
+    selected_character_index: `${0 | 1 | 2 | 3 | 4 | 5}`,
+    group_visibility?: KOCGroupVisibility
   }
 }

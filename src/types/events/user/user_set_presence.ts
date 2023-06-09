@@ -8,11 +8,16 @@ export type PresenceState =
   // Not Joinable
   | 3
   // Joinable but full?
+  // Get emitted with -1 Rich Presence
   | 4
   // Joinable
   | 5
+  // ?
+  | 6
 
 export type RichPresenceState =
+  // TODO: No clue what that means yet
+  | -1
   // Hideout (Solo)
   | 0
   // Hideout (Group)

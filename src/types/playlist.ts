@@ -1,8 +1,15 @@
 import { UUID } from "crypto"
 
+export type KOCServerPlaylistMatchFlow =
+  // Maybe Private Match??
+  | 0
+  // Hideout?
+  | 2
+  | 3
+  | 4
+
 export type KOCServerPlaylist = {
-  // TODO: No clue what that number means
-  "match_flow": 3 | 4,
+  "match_flow": KOCServerPlaylistMatchFlow,
   "playlist_guid": UUID,
   "playlist_name": string,
   "active_custom": boolean,
