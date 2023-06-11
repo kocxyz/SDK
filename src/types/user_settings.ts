@@ -1,13 +1,15 @@
+import { KOCDatabaseId } from "./id";
+
 // https://stackoverflow.com/a/70307091
 type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
   ? Acc[number]
   : Enumerate<N, [...Acc, Acc['length']]>
 
-type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>> | T
 
 export type KOCUserSettings = {
-  catch_private_server: 1;
-  user_settings_version: 8;
+  catch_private_server: '1';
+  user_settings_version: '8';
   // Invert Camera Y-Axis
   'control_user_settings_data.vscript.cam_y_axis_inverted': `${Range<0, 1>}`;
   // Controller Camera X Sensitivity
@@ -93,9 +95,10 @@ export type KOCUserSettings = {
   'social_user_settings_data.vscript.enable_taunts': `${number}`;
   'social_user_settings_data.vscript.share_usage_data': `${number}`;
   'social_user_settings_data.vscript.initialized': `${number}`;
+  respawn_tips_index: `${number}`;
   velan_login_legal_terms_accepted: `${number}`;
   market_backfilled_day: `${number}`;
-  market_backfilled_offers_0: 'NULL_OFFER';
+  market_backfilled_offers_0: KOCDatabaseId;
   contracts_viewed_utc_timestamp: `${number}`;
   tracked_contract_def_a: `${number}`;
   tracked_contract_def_b: `${number}`;
