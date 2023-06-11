@@ -16,7 +16,7 @@ A developer friendly **unofficial** SDK for the private server build of [Knockou
 
 ## Limitations
 
-- Authentication is currently only possible to private servers that don't use a secret or any type or authentication proxy (e.g. [KOCity-Proxy](https://github.com/Ipmake/KOCity-Proxy))
+- Authentication is currently only possible to private servers that don't use a secret. For authentication proxy servers (e.g. [KOCity-Proxy](https://github.com/Ipmake/KOCity-Proxy)) you can use the [KnockoutCity Auth Client](https://github.com/Tandashi/KnockoutCity-Auth-Client) to get the credentials.
 - Joining Gameserver is currently not possible but will hopefully become a feature when the `VNET0` Protocol has been reverse engineered.
 
 ## Installation
@@ -76,8 +76,6 @@ kocWebsocketClient.on('EVENT NAME', (data) => {
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
