@@ -1,13 +1,13 @@
 type EventsMap = {
-  [event: string]: any
-}
+  [event: string]: any;
+};
 
 export type EventUnsubscribe = {
-  (): void
-}
+  (): void;
+};
 
 export class EventEmitter<Events extends EventsMap> {
-  private events: Partial<{ [E in keyof Events]: Events[E][] }> = {}
+  private events: Partial<{ [E in keyof Events]: Events[E][] }> = {};
 
   /**
    * Add an event listener.
@@ -18,15 +18,14 @@ export class EventEmitter<Events extends EventsMap> {
    */
   public on<K extends keyof Events>(event: K, callback: Events[K]): EventUnsubscribe {
     if (this.events[event] === undefined) {
-      this.events[event] = [callback]
-    }
-    else {
-      this.events[event]!.push(callback)
+      this.events[event] = [callback];
+    } else {
+      this.events[event]!.push(callback);
     }
 
     return () => {
-      this.events[event] = this.events[event]?.filter(index => callback !== index)
-    }
+      this.events[event] = this.events[event]?.filter((index) => callback !== index);
+    };
   }
 
   /**
@@ -35,13 +34,10 @@ export class EventEmitter<Events extends EventsMap> {
    * @param event The type of event.
    * @param args The event parameters.
    */
-  public emit<K extends keyof Events>(
-    event: K,
-    ...args: Parameters<Events[K]>
-  ): void {
-    const callbacks = this.events[event] || []
+  public emit<K extends keyof Events>(event: K, ...args: Parameters<Events[K]>): void {
+    const callbacks = this.events[event] || [];
     callbacks.forEach((callback) => {
-      callback(...args)
-    })
+      callback(...args);
+    });
   }
 }

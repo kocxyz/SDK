@@ -1,5 +1,5 @@
 export { authenticate } from './api/auth';
 
-export { KOCWebsocketClient } from './websocket/client'
+export { KOCWebsocketClient } from './websocket/client';
 
-export * from './websocket/emitter'
+export * from './websocket/emitter';

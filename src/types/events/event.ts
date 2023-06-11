@@ -1,8 +1,8 @@
-import type * as KOCEvents from ".";
+import type * as KOCEvents from '.';
 
 export type KOCEvent = {
   type: `_${string}`;
-}
+};
 
 export type KOCClientEvent =
   // Block
@@ -40,7 +40,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCUserPingDataClientEvent
   | KOCEvents.KOCUserSetPresenceClientEvent
   | KOCEvents.KOCUserRequestSocialPresenceClientEvent
-  | KOCEvents.KOCUserRequestPlaylistUpdateClientEvent
+  | KOCEvents.KOCUserRequestPlaylistUpdateClientEvent;
 
 export type KOCServerEvent =
   // Blocks
@@ -86,4 +86,4 @@ export type KOCServerEvent =
   // Error
   | KOCEvents.KOCErrorServerEvent
   // Welcome
-  | KOCEvents.KOCWelcomeServerEvent
+  | KOCEvents.KOCWelcomeServerEvent;

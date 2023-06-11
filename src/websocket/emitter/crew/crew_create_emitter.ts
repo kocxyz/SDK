@@ -1,10 +1,11 @@
-import { KOCEmitter } from "../emitter";
+import { KOCEmitter } from '../emitter';
 
 type EmitterCrewCreateParameters = {
-  name: string
-}
+  name: string;
+};
 
-export const emitCrewCreate: KOCEmitter<EmitterCrewCreateParameters> = (client, params) => client.emit({
-  type: '_crews_create',
-  name: params.name,
-})
+export const emitCrewCreate: KOCEmitter<EmitterCrewCreateParameters> = (client, params) =>
+  client.emit({
+    type: '_crews_create',
+    name: params.name,
+  });

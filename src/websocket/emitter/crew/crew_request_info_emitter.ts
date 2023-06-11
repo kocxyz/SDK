@@ -1,14 +1,15 @@
-import { KOCEmitter } from "../emitter";
+import { KOCEmitter } from '../emitter';
 
 type EmitterCrewRequestInfoParameters = {
-  userIds: number[]
-}
+  userIds: number[];
+};
 
-export const emitCrewRequestInfo: KOCEmitter<EmitterCrewRequestInfoParameters> = (client, params) => client.emit({
-  type: '_crews_request_info',
-  users: params.userIds.map((id) => ({
-    user_id: {
-      velan: id
-    }
-  }))
-})
+export const emitCrewRequestInfo: KOCEmitter<EmitterCrewRequestInfoParameters> = (client, params) =>
+  client.emit({
+    type: '_crews_request_info',
+    users: params.userIds.map((id) => ({
+      user_id: {
+        velan: id,
+      },
+    })),
+  });

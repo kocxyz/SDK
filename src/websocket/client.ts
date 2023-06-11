@@ -3,15 +3,15 @@ import { client as WebsocketClient, connection as Connection } from 'websocket';
 
 import type { KOCServerUrl } from '../types/connection';
 import type { KOCClientEvent, KOCEvent, KOCServerEvent } from '../types/events';
-import { EventEmitter, EventUnsubscribe } from './event_emitter'
+import { EventEmitter, EventUnsubscribe } from './event_emitter';
 
 type OfUnion<T extends KOCEvent> = {
-  [P in T['type']]: Extract<T, { type: P }>
-}
+  [P in T['type']]: Extract<T, { type: P }>;
+};
 
 type EmitterEvents<T extends KOCEvent> = {
-  [K in keyof OfUnion<T>]: (event: OfUnion<T>[K]) => void
-}
+  [K in keyof OfUnion<T>]: (event: OfUnion<T>[K]) => void;
+};
 
 export class KOCWebsocketClient {
   /**
@@ -64,43 +64,43 @@ export class KOCWebsocketClient {
 
   /**
    * Add a listener for a given event.
-   * 
+   *
    * @param event The event type to listen to.
    * @param callback The callback when the event is emitted.
-   * 
+   *
    * @returns Unbind listener from event.
    */
   public on<Event extends keyof EmitterEvents<KOCServerEvent>>(
     event: Event,
-    callback: EmitterEvents<KOCServerEvent>[Event]
+    callback: EmitterEvents<KOCServerEvent>[Event],
   ): EventUnsubscribe {
-    return this.emitter.on(event, callback)
+    return this.emitter.on(event, callback);
   }
 
   /**
    * Add a listener for a given event that only gets invoked once.
-   * 
+   *
    * @param event The event type to listen to.
    * @param callback The callback when the event is emitted.
-   * 
+   *
    * @returns Unbind listener from event.
    */
   public once<Event extends keyof EmitterEvents<KOCServerEvent>>(
     event: Event,
-    callback: EmitterEvents<KOCServerEvent>[Event]
+    callback: EmitterEvents<KOCServerEvent>[Event],
   ): EventUnsubscribe {
     const unbind = this.emitter.on(event, (data: any) => {
-      unbind()
-      callback(data)
-    })
-    return unbind
+      unbind();
+      callback(data);
+    });
+    return unbind;
   }
 
   /**
    * Emit a client event to the Knockout City Server.
-   * 
+   *
    * @param event The event to emit.
-   * 
+   *
    * @returns A Promise that resolves when the Event has successfully been emitted.
    */
   public emit(event: KOCClientEvent): Promise<void> {
@@ -109,10 +109,7 @@ export class KOCWebsocketClient {
         return reject('Not connected. Please connect first.');
       }
 
-      this.connection.sendUTF(
-        JSON.stringify(event),
-        () => resolve(),
-      );
+      this.connection.sendUTF(JSON.stringify(event), () => resolve());
     });
   }
 
@@ -128,9 +125,9 @@ export class KOCWebsocketClient {
       this.connection!.on('close', () => {
         this.connection = undefined;
         resolve();
-      })
+      });
 
-      this.connection!.close()
+      this.connection!.close();
     });
   }
 
@@ -161,7 +158,7 @@ export class KOCWebsocketClient {
 
         connection.on('message', (data) => {
           if (data.type === 'utf8') {
-            const message: unknown = JSON.parse(data.utf8Data)
+            const message: unknown = JSON.parse(data.utf8Data);
 
             // Check if message is of type object
             if (typeof message !== 'object') {
@@ -180,18 +177,18 @@ export class KOCWebsocketClient {
               return;
             }
 
-            this.emitter.emit(message.type as any, message)
+            this.emitter.emit(message.type as any, message);
           }
         });
 
         connection.on('close', () => {
-          this.connection = undefined
-        })
+          this.connection = undefined;
+        });
 
         // Listen to the welcome event so we know the server
         // knows we are connected and we can start emitting
         // events as well
-        this.once('_welcome', () => resolve())
+        this.once('_welcome', () => resolve());
       });
 
       this.client.connect(`${this.address}/`, [], undefined, headers);

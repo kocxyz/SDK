@@ -1,12 +1,13 @@
-import { KOCEmitter } from "../emitter";
+import { KOCEmitter } from '../emitter';
 
 type EmitterCrewSendInviteParameters = {
-  userId: number
-}
+  userId: number;
+};
 
-export const emitCrewSendInvite: KOCEmitter<EmitterCrewSendInviteParameters> = (client, params) => client.emit({
-  type: '_crews_send_invite',
-  user_id: {
-    velan: params.userId
-  }
-})
+export const emitCrewSendInvite: KOCEmitter<EmitterCrewSendInviteParameters> = (client, params) =>
+  client.emit({
+    type: '_crews_send_invite',
+    user_id: {
+      velan: params.userId,
+    },
+  });

@@ -1,12 +1,13 @@
-import { KOCEmitter } from "../emitter";
+import { KOCEmitter } from '../emitter';
 
 type EmitterCrewSendJoinRequestParameters = {
-  userId: number
-}
+  userId: number;
+};
 
-export const emitCrewSendJoinRequest: KOCEmitter<EmitterCrewSendJoinRequestParameters> = (client, params) => client.emit({
-  type: '_crews_send_join_request',
-  user_id: {
-    velan: params.userId
-  }
-})
+export const emitCrewSendJoinRequest: KOCEmitter<EmitterCrewSendJoinRequestParameters> = (client, params) =>
+  client.emit({
+    type: '_crews_send_join_request',
+    user_id: {
+      velan: params.userId,
+    },
+  });

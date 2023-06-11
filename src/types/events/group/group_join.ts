@@ -1,26 +1,26 @@
-import { KOCUserId } from "../../user"
-import { KOCEvent } from "../event"
+import { KOCUserId } from '../../user';
+import { KOCEvent } from '../event';
 
 /**
  * An event that is used to join a group.
- * 
+ *
  * Also used for leaving the group (emit with own user id)
  */
 export type KOCGroupJoinClientEvent = KOCEvent & {
-  type: '_group_join',
+  type: '_group_join';
   /**
    * The User Id who's group to join.
    */
-  user_id: KOCUserId,
+  user_id: KOCUserId;
   /**
    * Wheather or not the join happend because
    * of an invite.
    */
-  join_via_invite: boolean,
+  join_via_invite: boolean;
   /**
    * Wheather or not to merge groups.
-   * 
+   *
    * **Hint**: No clue what that does yet.
    */
-  merge_group: boolean
-}
+  merge_group: boolean;
+};

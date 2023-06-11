@@ -4,4 +4,4 @@ export type KOCGroupVisibility =
   // Private
   | 1
   // Invite Only
-  | 2
+  | 2;

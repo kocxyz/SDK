@@ -1,15 +1,16 @@
-import { KOCEmitter } from "../emitter";
+import { KOCEmitter } from '../emitter';
 
 type EmitterUnblockPlayerParameters = {
   /**
    * The Id of the user who to unblock.
    */
-  userId: number,
-}
+  userId: number;
+};
 
-export const emitUnblockPlayer: KOCEmitter<EmitterUnblockPlayerParameters> = (client, params) => client.emit({
-  type: '_unblock_player',
-  user_id: {
-    velan: params.userId
-  },
-})
+export const emitUnblockPlayer: KOCEmitter<EmitterUnblockPlayerParameters> = (client, params) =>
+  client.emit({
+    type: '_unblock_player',
+    user_id: {
+      velan: params.userId,
+    },
+  });

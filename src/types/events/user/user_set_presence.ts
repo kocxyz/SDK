@@ -1,4 +1,4 @@
-import { KOCEvent } from "../event"
+import { KOCEvent } from '../event';
 
 export type PresenceState =
   // Appear Offline
@@ -13,7 +13,7 @@ export type PresenceState =
   // Joinable
   | 5
   // ?
-  | 6
+  | 6;
 
 export type RichPresenceState =
   // TODO: No clue what that means yet
@@ -37,10 +37,10 @@ export type RichPresenceState =
   // Training (Solo)
   | 8
   // Training (Group)
-  | 9
+  | 9;
 
 export type KOCUserSetPresenceClientEvent = KOCEvent & {
-  type: '_user_set_presence',
-  presence_state: PresenceState
-  rich_presence_state: RichPresenceState
-}
+  type: '_user_set_presence';
+  presence_state: PresenceState;
+  rich_presence_state: RichPresenceState;
+};

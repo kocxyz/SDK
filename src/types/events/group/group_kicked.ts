@@ -1,5 +1,5 @@
-import { KOCEvent } from "../event"
+import { KOCEvent } from '../event';
 
 export type KOCGroupKickedServerEvent = KOCEvent & {
-  type: '_kicked_from_group'
-}
+  type: '_kicked_from_group';
+};
