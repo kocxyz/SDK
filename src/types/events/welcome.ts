@@ -3,7 +3,7 @@ import { KOCServerPlaylist } from '../playlist';
 import { KOCServerRegion } from '../region';
 import { KOCServerSwitches } from '../switches';
 import { KOCServerTunables } from '../tunables';
-import { KOCServerUserSettings } from '../user_settings';
+import { KOCUserSettings } from '../user_settings';
 import { KOCEvent } from './event';
 
 export type KOCWelcomeServerEvent = KOCEvent & {
@@ -48,5 +48,5 @@ export type KOCWelcomeServerEvent = KOCEvent & {
   /**
    * The users configuration that is stored on the server
    */
-  user_settings: KOCServerUserSettings;
+  user_settings: KOCUserSettings;
 };

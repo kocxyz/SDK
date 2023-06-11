@@ -74,6 +74,7 @@ export * from './street_rank/street_rank_update';
 // User
 export * from './user/persistence_get_user_pairs';
 export * from './user/persistence_set_user_pairs';
+export * from './user/persistence_set_user_settings'
 export * from './user/user_quit_penalty';
 export * from './user/user_set_presence';
 export * from './user/user_request_social_presence';

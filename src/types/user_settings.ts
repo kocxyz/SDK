@@ -1,20 +1,58 @@
-export type KOCServerUserSettings = {
-  user_settings_version: `${number}`;
-  'control_user_settings_data.vscript.cam_y_axis_inverted': `${number}`;
-  'control_user_settings_data.vscript.controller_cam_x_sensitivity': `${number}`;
-  'control_user_settings_data.vscript.controller_cam_y_sensitivity': `${number}`;
-  'control_user_settings_data.vscript.controller_rumble_enabled': `${number}`;
-  'control_user_settings_data.vscript.trigger_sensitivity': `${number}`;
-  'control_user_settings_data.vscript.ballform_toggle': `${number}`;
-  'control_user_settings_data.vscript.throw_toggle': `${number}`;
-  'control_user_settings_data.vscript.pass_toggle': `${number}`;
-  'control_user_settings_data.vscript.sprint_toggle': `${number}`;
+// https://stackoverflow.com/a/70307091
+type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
+  ? Acc[number]
+  : Enumerate<N, [...Acc, Acc['length']]>
+
+type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+
+export type KOCUserSettings = {
+  catch_private_server: 1;
+  user_settings_version: 8;
+  // Invert Camera Y-Axis
+  'control_user_settings_data.vscript.cam_y_axis_inverted': `${Range<0, 1>}`;
+  // Controller Camera X Sensitivity
+  'control_user_settings_data.vscript.controller_cam_x_sensitivity': `${Range<0, 20>}`;
+  // Controller Camera Y Sensitivity
+  'control_user_settings_data.vscript.controller_cam_y_sensitivity': `${Range<0, 20>}`;
+  // Left Stick Deadzone
+  'control_user_settings_data.vscript.left_stick_inner_dead_zone': `${Range<0, 50>}`;
+  // Right Stick Deadzone
+  'control_user_settings_data.vscript.right_stick_inner_dead_zone': `${Range<0, 50>}`;
+  // Trigger Sensitivity
+  'control_user_settings_data.vscript.trigger_sensitivity': `${Range<0, 2>}`;
+  // Controller Vibration
+  'control_user_settings_data.vscript.controller_rumble_enabled': `${Range<0, 1>}`;
+  // Ballform Button
+  // 0 - Hold
+  // 1 - Toggle
+  'control_user_settings_data.vscript.ballform_toggle': `${Range<0, 1>}`;
+  // Throw Button
+  // 0 - Hold
+  // 1 - Toggle
+  'control_user_settings_data.vscript.throw_toggle': `${Range<0, 1>}`;
+  // Pass Button
+  // 0 - Hold
+  // 1 - Toggle
+  'control_user_settings_data.vscript.pass_toggle': `${Range<0, 1>}`;
+  // Glide Button
+  // 0 - Hold
+  // 1 - Toggle
+  'control_user_settings_data.vscript.glide_toggle': `${Range<0, 1>}`;
+  // Spring Button
+  // 0 - Hold
+  // 1 - Toggle
+  // 2 - Auto
+  'control_user_settings_data.vscript.sprint_toggle': `${Range<0, 2>}`;
+  // Curve Throw Direction
+  // 0 - Manual
+  // 1 - Auto
+  // 2 - Hybrid
+  'control_user_settings_data.vscript.curve_throw_direction': `${Range<0, 2>}`;
+  // Sprint Cancel Delay
+  'control_user_settings_data.vscript.sprint_throw_cancel_delay': `${Range<0, 8>}`;
+
+
   'control_user_settings_data.vscript.hide_spectating_hud_toggle': `${number}`;
-  'control_user_settings_data.vscript.glide_toggle': `${number}`;
-  'control_user_settings_data.vscript.curve_throw_direction': `${number}`;
-  'control_user_settings_data.vscript.left_stick_inner_dead_zone': `${number}`;
-  'control_user_settings_data.vscript.right_stick_inner_dead_zone': `${number}`;
-  'control_user_settings_data.vscript.sprint_throw_cancel_delay': `${number}`;
   'control_user_settings_data.vscript.initialized': `${number}`;
   'presence_user_settings_data.vscript.appear_offline': `${number}`;
   'presence_user_settings_data.vscript.crossplay_allowed': `${number}`;
@@ -57,7 +95,6 @@ export type KOCServerUserSettings = {
   'social_user_settings_data.vscript.initialized': `${number}`;
   velan_login_legal_terms_accepted: `${number}`;
   market_backfilled_day: `${number}`;
-  catch_private_server: `${number}`;
   market_backfilled_offers_0: 'NULL_OFFER';
   contracts_viewed_utc_timestamp: `${number}`;
   tracked_contract_def_a: `${number}`;
@@ -105,4 +142,66 @@ export type KOCServerUserSettings = {
   s09_accessory_seen_ult_throw_1: `${number}`;
   s02_accessory_seen_ult_throw_1: `${number}`;
   camera_inverse_setting: `${number}`;
-};
+} & Partial<KOCUserSettingsKeymap>;
+
+type KOCUserSettingsKeymapValue =
+  // Value other then default
+  | `${number},${number}`
+  // Reset to default
+  | '-';
+
+type KOCUserSettingsKeymapType =
+  // Move Forward
+  | 'keymap_move_forward_1'
+  // Move Backwards
+  | 'keymap_move_backward_1'
+  // Strafe Left
+  | 'keymap_move_left_1'
+  // Strafe Right
+  | 'keymap_move_right_1'
+  // Look Up
+  | 'keymap_look_up_1'
+  // Look Down
+  | 'keymap_look_down_1'
+  // Look Left
+  | 'keymap_look_left_1'
+  // Look Right
+  | 'keymap_look_right_1'
+  // Throw
+  | 'keymap_throw_1'
+  // Fake Throw
+  | 'keymap_fake_throw_1'
+  // Pass
+  | 'keymap_pass_1'
+  // Drop Ball
+  | 'keymap_drop_1'
+  // Catch
+  | 'keymap_catch_1'
+  // Dodge
+  | 'keymap_dash_1'
+  // Ballform
+  | 'keymap_ballform_1'
+  // Sprint
+  | 'keymap_sprint_1'
+  // Jump
+  | 'keymap_jump_1'
+  // Spin
+  | 'keymap_spin_1'
+  // Flip
+  | 'keymap_flip_1'
+  // Taunt
+  | 'keymap_taunt_1'
+  // Additional Emote
+  | 'keymap_ping_1'
+  // Interact
+  | 'keymap_interact_1'
+  // Text-to-Speech
+  | 'keymap_text_to_speech_1'
+  // Push-to-Talk
+  | 'keymap_push_to_talk_1'
+  // Match / Contracts Stats
+  | 'keymap_mid_match_menu_1'
+
+type KOCUserSettingsKeymap = {
+  [key in KOCUserSettingsKeymapType]: KOCUserSettingsKeymapValue
+}

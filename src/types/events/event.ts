@@ -37,6 +37,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCRelayClientEvent
   // User
   | KOCEvents.KOCPersistenceSetUserPairsClientEvent
+  | KOCEvents.KOCPersistenceSetUserSettingsClientEvent
   | KOCEvents.KOCUserPingDataClientEvent
   | KOCEvents.KOCUserSetPresenceClientEvent
   | KOCEvents.KOCUserRequestSocialPresenceClientEvent
