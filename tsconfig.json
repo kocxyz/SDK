@@ -4,7 +4,10 @@
     "target": "es2015",
     "declaration": true,
     "outDir": "./dist",
-    "strict": true
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"]
 }

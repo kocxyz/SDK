@@ -1,4 +1,4 @@
-import type { KOCEmitter } from '../emitter';
+import type { KOCEmitter } from '@/websocket/emitter/emitter';
 
 export const emitUserRequestSocialPresence: KOCEmitter<void> = (client) =>
   client.emit({

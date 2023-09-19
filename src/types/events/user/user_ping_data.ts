@@ -1,4 +1,4 @@
-import { IPAddress } from '../../../types/connection';
+import { IPAddress } from '@/types';
 import { KOCEvent } from '../event';
 
 export type KOCUserPingDataRegion = {

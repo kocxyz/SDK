@@ -1,5 +1,5 @@
 import { UUID } from 'crypto';
-import { KOCEmitter } from '../emitter';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewAcceptInviteParameters = {
   userId: number;

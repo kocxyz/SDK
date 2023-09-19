@@ -1,5 +1,5 @@
-import { KOCEmitter } from '../emitter';
-import { KOCCommerceInventoryEquipment } from '../../../types/commerce';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCCommerceInventoryEquipment } from '@/types';
 
 type EmitterCommerceInventoryEquipParameters = {
   userId: number;

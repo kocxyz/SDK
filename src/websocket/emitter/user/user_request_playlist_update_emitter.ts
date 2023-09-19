@@ -1,4 +1,4 @@
-import type { KOCEmitter } from '../emitter';
+import type { KOCEmitter } from '@/websocket/emitter/emitter';
 
 /**
  * Request the playlists that are available on the

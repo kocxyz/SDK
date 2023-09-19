@@ -1,6 +1,5 @@
 import axios from 'axios';
-import type { KOCServerUrl } from '../types/connection';
-import { KOCPersonaId, KOCUserId } from '../types/user';
+import type { KOCPersonaId, KOCServerUrl, KOCUserId } from '@/types';
 
 type User = {
   id: KOCUserId;

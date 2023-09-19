@@ -1,5 +1,5 @@
-import { KOCUserPairs } from '../../../types/user';
-import { KOCEmitter } from '../emitter';
+import { KOCUserPairs } from '@/types';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPersistenceSetPairsParameters = {
   userId: number;

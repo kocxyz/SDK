@@ -1,4 +1,4 @@
-import { KOCEmitter } from '../emitter';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
 
 export const emitCommerceGetCrewInventory: KOCEmitter<void> = (client) =>
   client.emit({

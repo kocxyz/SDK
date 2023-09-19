@@ -1,5 +1,5 @@
-import type { PresenceState, RichPresenceState } from '../../../types/events';
-import type { KOCEmitter } from '../emitter';
+import type { PresenceState, RichPresenceState } from '@/types';
+import type { KOCEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPresenceParameters = {
   presenceState: PresenceState;

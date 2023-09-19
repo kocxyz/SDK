@@ -1,4 +1,4 @@
-import { KOCEmitter } from '../emitter';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewCreateParameters = {
   name: string;

@@ -1,5 +1,5 @@
-import { KOCUserPingDataRegion } from '../../../types/events';
-import { KOCEmitter } from '../emitter';
+import { KOCUserPingDataRegion } from '@/types';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPingDataParameters = {
   regions: KOCUserPingDataRegion[];

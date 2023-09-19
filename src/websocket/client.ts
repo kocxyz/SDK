@@ -1,8 +1,7 @@
 import { UUID } from 'crypto';
 import { client as WebsocketClient, connection as Connection } from 'websocket';
 
-import type { KOCServerUrl } from '../types/connection';
-import type { KOCClientEvent, KOCEvent, KOCServerEvent } from '../types/events';
+import type { KOCServerUrl, KOCClientEvent, KOCEvent, KOCServerEvent } from '@/types';
 import { EventEmitter, EventUnsubscribe } from './event_emitter';
 
 type OfUnion<T extends KOCEvent> = {

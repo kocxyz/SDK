@@ -1,6 +1,6 @@
 import { UUID } from 'crypto';
-import { KOCEmitter } from '../emitter';
-import { KOCServerPlaylistMatchFlow } from '../../../types/playlist';
+import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCServerPlaylistMatchFlow } from '@/types';
 
 type EmitterMatchmakingStartGameSearchParameters = {
   /**
