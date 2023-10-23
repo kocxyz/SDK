@@ -1,8 +1,8 @@
 import type { UUID } from 'node:crypto';
-import * as crypto from 'node:crypto'
+import * as crypto from 'node:crypto';
 import { client as WebsocketClient, connection as Connection } from 'websocket';
 
-import type { KOCServerUrl, KOCClientEvent, KOCEvent, KOCServerEvent } from '@/types';
+import type { KOCClientEvent, KOCEvent, KOCServerEvent, KOCWebsocketServerUrl } from '@/types';
 import { EventEmitter, EventUnsubscribe } from './event_emitter';
 
 type OfUnion<T extends KOCEvent> = {
@@ -26,7 +26,7 @@ export class KOCWebsocketClient {
   /**
    * The address to the Knockout City Server.
    */
-  private address: KOCServerUrl;
+  private address: KOCWebsocketServerUrl;
 
   /**
    * The Session ID for the client.
@@ -57,7 +57,7 @@ export class KOCWebsocketClient {
    * @param address The address of the Knockout City Server.
    * @param gameSessionId The Session Id of the client. (Default: Random generated)
    */
-  constructor(address: KOCServerUrl, gameSessionId: UUID = crypto.randomUUID()) {
+  constructor(address: KOCWebsocketServerUrl, gameSessionId: UUID = crypto.randomUUID()) {
     this.address = address;
     this.gameSessionId = gameSessionId;
   }
