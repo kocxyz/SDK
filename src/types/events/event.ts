@@ -84,6 +84,7 @@ export type KOCServerEvent =
   // User
   | KOCEvents.KOCSetUserQuitPenaltyServerEvent
   | KOCEvents.KOCPersistenceGetUserPairsServerEvent
+  | KOCEvents.KOCPresenceLookupGetServerEvent
   // Error
   | KOCEvents.KOCErrorServerEvent
   // Welcome
