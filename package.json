@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' 'examples/**/*.ts' --write",
-    "prepublish": "npx tsc"
+    "prepublish": "tsc && tsc-alias"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@types/node": "^20.2.5",
     "@types/websocket": "^1.0.5",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "tsc-alias": "^1.8.8"
   }
 }
