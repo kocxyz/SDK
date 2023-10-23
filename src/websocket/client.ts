@@ -1,4 +1,5 @@
-import { UUID } from 'crypto';
+import type { UUID } from 'node:crypto';
+import * as crypto from 'node:crypto'
 import { client as WebsocketClient, connection as Connection } from 'websocket';
 
 import type { KOCServerUrl, KOCClientEvent, KOCEvent, KOCServerEvent } from '@/types';
@@ -135,7 +136,7 @@ export class KOCWebsocketClient {
    *
    * @param token The bearer token to authenticate against the server with.
    */
-  public connect(token: String): Promise<void> {
+  public connect(token: string): Promise<void> {
     if (this.connection) {
       throw Error('Already connected, disconnect first.');
     }
