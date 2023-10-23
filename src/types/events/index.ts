@@ -78,6 +78,7 @@ export * from './user/persistence_set_user_settings';
 export * from './user/presence_lookup_get';
 export * from './user/user_quit_penalty';
 export * from './user/user_set_presence';
+export * from './user/user_request_presence_by_partial_name';
 export * from './user/user_request_social_presence';
 export * from './user/user_request_playlist_update';
 export * from './user/user_ping_data';

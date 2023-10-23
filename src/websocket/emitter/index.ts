@@ -34,8 +34,9 @@ export * from './matchmaking/matchmaking_start_game_search_emitter';
 
 // User
 export * from './user/user_persistence_set_pairs_emitter';
-export * from './user/user_persistence_set_settings_emitter'
+export * from './user/user_persistence_set_settings_emitter';
 export * from './user/user_ping_data_emitter';
 export * from './user/user_presence_emitter';
+export * from './user/user_request_presence_by_partial_name_emitter';
 export * from './user/user_request_social_presence_emitter';
 export * from './user/user_request_playlist_update_emitter';

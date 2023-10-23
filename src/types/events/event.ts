@@ -41,6 +41,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCUserPingDataClientEvent
   | KOCEvents.KOCUserSetPresenceClientEvent
   | KOCEvents.KOCUserRequestSocialPresenceClientEvent
+  | KOCEvents.KOCUserRequestPresenceByPartialNameClientEvent
   | KOCEvents.KOCUserRequestPlaylistUpdateClientEvent;
 
 export type KOCServerEvent =
