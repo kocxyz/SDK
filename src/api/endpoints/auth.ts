@@ -1,19 +1,19 @@
-import axios from 'axios';
-import type { KOCPersonaId, KOCServerUrl, KOCUserId } from '@/types';
+import type { KOCPersonaId, KOCUserId } from '@/types';
+import { APIClient } from '@/api/client';
 
 type User = {
   id: KOCUserId;
   auth_provider: 'dev';
-  username: String;
-  publisher_username: String;
-  publisher_username_code: Number;
+  username: string;
+  publisher_username: string;
+  publisher_username_code: number;
   publisher_id: { invalid: 0 | 1 };
   persona_id: KOCPersonaId;
 };
 
 type AuthenticateResponse = {
   user: User;
-  token: String;
+  token: string;
   country: 'US';
 };
 
@@ -23,17 +23,17 @@ type AuthenticateResponse = {
  * **Note**: Currently its not possible to authenticate against servers
  * that required a secret.
  *
- * @param address The address at which the server is reachable
+ * @param client The API Client
  * @param username The username to authenticate with
  *
  * @returns
  */
-export async function authenticate(address: KOCServerUrl, username: String): Promise<AuthenticateResponse> {
+export const authenticate = (client: APIClient, username: string): Promise<AuthenticateResponse> => {
   const systemGuid = crypto.randomUUID();
   const bootSessionGuid = crypto.randomUUID();
 
-  return axios
-    .post<AuthenticateResponse>(`${address}/api/auth`, {
+  return client
+    .post<AuthenticateResponse>('/api/auth', {
       credentials: {
         username: username,
         platform: 'win64',
@@ -47,4 +47,4 @@ export async function authenticate(address: KOCServerUrl, username: String): Pro
       auth_provider: 'dev',
     })
     .then((response) => response.data);
-}
+};
