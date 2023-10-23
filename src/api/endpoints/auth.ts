@@ -1,5 +1,6 @@
 import type { KOCPersonaId, KOCUserId } from '@/types';
 import { APIClient } from '@/api/client';
+import * as crypto from 'node:crypto';
 
 type User = {
   id: KOCUserId;
