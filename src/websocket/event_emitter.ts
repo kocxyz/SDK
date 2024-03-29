@@ -1,5 +1,5 @@
 type EventsMap = {
-  [event: string]: any;
+  [event: string]: (...args: any[]) => void;
 };
 
 export type EventUnsubscribe = {
@@ -8,6 +8,26 @@ export type EventUnsubscribe = {
 
 export class EventEmitter<Events extends EventsMap> {
   private events: Partial<{ [E in keyof Events]: Events[E][] }> = {};
+
+  /**
+   * Fallback event listener.
+   */
+  private fallback: EventsMap[string] = () => {};
+
+  /**
+   * Add a listener for any event that has no listener registered.
+   *
+   * @param callback The callback.
+   *
+   * @returns Unbind listener from event.
+   */
+  public onOther(callback: EventsMap[string]): EventUnsubscribe {
+    this.fallback = callback;
+
+    return () => {
+      this.fallback = () => {};
+    };
+  }
 
   /**
    * Add an event listener.
@@ -35,7 +55,7 @@ export class EventEmitter<Events extends EventsMap> {
    * @param args The event parameters.
    */
   public emit<K extends keyof Events>(event: K, ...args: Parameters<Events[K]>): void {
-    const callbacks = this.events[event] || [];
+    const callbacks = this.events[event] ?? [this.fallback];
     callbacks.forEach((callback) => {
       callback(...args);
     });

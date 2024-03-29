@@ -20,6 +20,9 @@ export class KOCWebsocketWrapper<ReceiveEvents extends KOCEvent, EmitEvents exte
    */
   private emitter: EventEmitter<EmitterEvents<ReceiveEvents>> = new EventEmitter();
 
+  /**
+   * The connection to communicate with.
+   */
   private connection: Connection | undefined;
 
   /**
@@ -33,6 +36,14 @@ export class KOCWebsocketWrapper<ReceiveEvents extends KOCEvent, EmitEvents exte
     }
   }
 
+  /**
+   * Attach a connection to the Websocket Wrapper.
+   * This connection will be used to send and receive messages.
+   *
+   * If a connection is already attached, an error will be thrown.
+   *
+   * @param connection The connection to attach to.
+   */
   public attachConnection(connection: Connection) {
     if (this.connection) {
       throw new Error('Connection already attached.');
@@ -58,8 +69,23 @@ export class KOCWebsocketWrapper<ReceiveEvents extends KOCEvent, EmitEvents exte
     });
   }
 
+  /**
+   * Detach the connection from the Websocket Wrapper.
+   * This will stop the Wrapper from receiving and sending messages.
+   */
   public detachConnection() {
     this.connection = undefined;
+  }
+
+  /**
+   * Add a listener for any event that has no listener registered.
+   *
+   * @param callback The callback.
+   *
+   * @returns Unbind listener from event.
+   */
+  public onOther(callback: (event: KOCEvent) => void): EventUnsubscribe {
+    return this.emitter.onOther(callback);
   }
 
   /**
