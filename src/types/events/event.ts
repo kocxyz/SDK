@@ -11,6 +11,7 @@ export type KOCClientEvent =
   // Commerce
   | KOCEvents.KOCCommerceGetCrewInventoryClientEvent
   | KOCEvents.KOCCommerceInventoryEquipClientEvent
+  | KOCEvents.KOCCommercePurchaseClientEvent
   // Crew
   | KOCEvents.KOCCrewRequestInfoClientEvent
   | KOCEvents.KOCCrewsAcceptInviteClientEvent
@@ -55,6 +56,7 @@ export type KOCServerEvent =
   | KOCEvents.KOCCommerceCatalogUpdateServerEvent
   | KOCEvents.KOCCommerceCrewInventoryUpdateServerEvent
   | KOCEvents.KOCCommerceInventoryUpdateServerEvent
+  | KOCEvents.KOCCommercePurchaseResultServerEvent
   // Contract
   | KOCEvents.KOCContractProgressGetServerEvent
   // Crew
