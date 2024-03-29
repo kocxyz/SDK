@@ -1,4 +1,4 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterFriendRejectRequestParameters = {
   /**
@@ -7,7 +7,7 @@ type EmitterFriendRejectRequestParameters = {
   userId: number;
 };
 
-export const emitFriendRejectRequest: KOCEmitter<EmitterFriendRejectRequestParameters> = (client, params) =>
+export const emitFriendRejectRequest: KOCClientEmitter<EmitterFriendRejectRequestParameters> = (client, params) =>
   client.emit({
     type: '_friends_reject_request',
     friend_user_id: {

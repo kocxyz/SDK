@@ -1,4 +1,4 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 import { KOCCommerceInventoryEquipment } from '@/types';
 
 type EmitterCommerceInventoryEquipParameters = {
@@ -6,7 +6,7 @@ type EmitterCommerceInventoryEquipParameters = {
   equipment: Partial<KOCCommerceInventoryEquipment>;
 };
 
-export const emitCommerceInventoryEquip: KOCEmitter<EmitterCommerceInventoryEquipParameters> = (client, params) =>
+export const emitCommerceInventoryEquip: KOCClientEmitter<EmitterCommerceInventoryEquipParameters> = (client, params) =>
   client.emit({
     type: '_commerce_inventory_equip',
     user_id: {

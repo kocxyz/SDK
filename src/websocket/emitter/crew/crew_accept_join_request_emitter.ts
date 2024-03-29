@@ -1,10 +1,10 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewAcceptJoinRequestParameters = {
   userId: number;
 };
 
-export const emitCrewAcceptJoinRequest: KOCEmitter<EmitterCrewAcceptJoinRequestParameters> = (client, params) =>
+export const emitCrewAcceptJoinRequest: KOCClientEmitter<EmitterCrewAcceptJoinRequestParameters> = (client, params) =>
   client.emit({
     type: '_crews_accept_join_request',
     user_id: {

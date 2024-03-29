@@ -1,11 +1,11 @@
 import { KOCUserSettings } from '@/types';
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPersistenceSetSettingsParameters = {
   settings: Partial<KOCUserSettings>;
 };
 
-export const emitUserPersistenceSetSettings: KOCEmitter<EmitterUserPersistenceSetSettingsParameters> = (
+export const emitUserPersistenceSetSettings: KOCClientEmitter<EmitterUserPersistenceSetSettingsParameters> = (
   client,
   params,
 ) =>

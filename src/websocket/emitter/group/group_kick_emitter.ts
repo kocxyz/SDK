@@ -1,4 +1,4 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterGroupKickParameters = {
   /**
@@ -7,7 +7,7 @@ type EmitterGroupKickParameters = {
   userId: number;
 };
 
-export const emitGroupKick: KOCEmitter<EmitterGroupKickParameters> = (client, params) =>
+export const emitGroupKick: KOCClientEmitter<EmitterGroupKickParameters> = (client, params) =>
   client.emit({
     type: '_group_kick',
     user_id: {

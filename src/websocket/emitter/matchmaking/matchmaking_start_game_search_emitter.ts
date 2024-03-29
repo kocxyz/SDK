@@ -1,5 +1,5 @@
 import { UUID } from 'crypto';
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 import { KOCServerPlaylistMatchFlow } from '@/types';
 
 type EmitterMatchmakingStartGameSearchParameters = {
@@ -17,7 +17,7 @@ type EmitterMatchmakingStartGameSearchParameters = {
   requestId: number;
 };
 
-export const emitMatchmakingStartGameSearch: KOCEmitter<EmitterMatchmakingStartGameSearchParameters> = (
+export const emitMatchmakingStartGameSearch: KOCClientEmitter<EmitterMatchmakingStartGameSearchParameters> = (
   client,
   params,
 ) =>

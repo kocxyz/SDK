@@ -1,12 +1,12 @@
 import { UUID } from 'crypto';
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewAcceptInviteParameters = {
   userId: number;
   crewGuid: UUID;
 };
 
-export const emitCrewAcceptInvite: KOCEmitter<EmitterCrewAcceptInviteParameters> = (client, params) =>
+export const emitCrewAcceptInvite: KOCClientEmitter<EmitterCrewAcceptInviteParameters> = (client, params) =>
   client.emit({
     type: '_crews_accept_invite',
     user_id: {

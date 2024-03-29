@@ -1,4 +1,4 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterGroupPromoteLeaderParameters = {
   /**
@@ -7,7 +7,7 @@ type EmitterGroupPromoteLeaderParameters = {
   userId: number;
 };
 
-export const emitPromoteGroupLeader: KOCEmitter<EmitterGroupPromoteLeaderParameters> = (client, params) =>
+export const emitPromoteGroupLeader: KOCClientEmitter<EmitterGroupPromoteLeaderParameters> = (client, params) =>
   client.emit({
     type: '_group_promote_leader',
     user_id: {

@@ -1,10 +1,10 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewRejectInviteParameters = {
   userId: number;
 };
 
-export const emitCrewRejectInvite: KOCEmitter<EmitterCrewRejectInviteParameters> = (client, params) =>
+export const emitCrewRejectInvite: KOCClientEmitter<EmitterCrewRejectInviteParameters> = (client, params) =>
   client.emit({
     type: '_crews_reject_invite',
     user_id: {

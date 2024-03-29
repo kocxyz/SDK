@@ -1,12 +1,15 @@
 import { KOCUserPairs } from '@/types';
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPersistenceSetPairsParameters = {
   userId: number;
   pairs: Partial<KOCUserPairs>[];
 };
 
-export const emitUserPersistenceSetPairs: KOCEmitter<EmitterUserPersistenceSetPairsParameters> = (client, params) =>
+export const emitUserPersistenceSetPairs: KOCClientEmitter<EmitterUserPersistenceSetPairsParameters> = (
+  client,
+  params,
+) =>
   client.emit({
     type: '_persistence_set_user_pairs',
     user_id: {

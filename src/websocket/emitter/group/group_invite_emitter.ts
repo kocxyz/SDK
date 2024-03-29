@@ -1,11 +1,11 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterGroupInviteParameters = {
   senderId: number;
   receiverId: number;
 };
 
-export const emitGroupInvite: KOCEmitter<EmitterGroupInviteParameters> = (client, params) =>
+export const emitGroupInvite: KOCClientEmitter<EmitterGroupInviteParameters> = (client, params) =>
   client.emit({
     type: '_relay',
     relay_type: '_relay_group_invite',

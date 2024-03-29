@@ -1,4 +1,4 @@
-import type { KOCEmitter } from '@/websocket/emitter/emitter';
+import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 /**
  * Request the playlists that are available on the
@@ -8,7 +8,7 @@ import type { KOCEmitter } from '@/websocket/emitter/emitter';
  *
  * @param client The KOCWebsocketClient instance
  */
-export const emitUserRequestPlaylistUpdate: KOCEmitter<void> = (client) =>
+export const emitUserRequestPlaylistUpdate: KOCClientEmitter<void> = (client) =>
   client.emit({
     type: '_user_request_playlist_update',
   });

@@ -1,12 +1,13 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
-import { CommerceBalance, CommerceEntry, KOCCommerceInventoryEquipment } from '@/types';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
+import { CommerceBalance, CommerceEntry, KOCClientEvent, KOCServerEvent } from '@/types';
+import { KOCWebsocketWrapper } from '@/websocket/wrapper';
 
 type EmitterCommercePurchaseParameters = {
   entries: CommerceEntry[];
   balance: CommerceBalance;
 };
 
-export const emitCommercePurchase: KOCEmitter<EmitterCommercePurchaseParameters> = (client, params) =>
+export const emitCommercePurchase: KOCClientEmitter<EmitterCommercePurchaseParameters> = (client, params) =>
   client.emit({
     type: '_commerce_purchase',
     entries: params.entries,

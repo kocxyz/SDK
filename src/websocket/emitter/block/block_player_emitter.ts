@@ -1,4 +1,4 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterBlockPlayerParameters = {
   /**
@@ -7,7 +7,7 @@ type EmitterBlockPlayerParameters = {
   userId: number;
 };
 
-export const emitBlockPlayer: KOCEmitter<EmitterBlockPlayerParameters> = (client, params) =>
+export const emitBlockPlayer: KOCClientEmitter<EmitterBlockPlayerParameters> = (client, params) =>
   client.emit({
     type: '_block_player',
     user_id: {

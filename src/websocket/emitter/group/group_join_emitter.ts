@@ -1,4 +1,4 @@
-import { KOCEmitter } from '@/websocket/emitter/emitter';
+import { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterGroupJoinParameters = {
   /**
@@ -18,7 +18,7 @@ type EmitterGroupJoinParameters = {
   mergeGroup: boolean;
 };
 
-export const emitGroupJoin: KOCEmitter<EmitterGroupJoinParameters> = (client, params) =>
+export const emitGroupJoin: KOCClientEmitter<EmitterGroupJoinParameters> = (client, params) =>
   client.emit({
     type: '_group_join',
     user_id: {
