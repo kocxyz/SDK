@@ -9,6 +9,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCBlockPlayerClientEvent
   | KOCEvents.KOCUnblockPlayerClientEvent
   // Commerce
+  | KOCEvents.KOCCommerceGetInventoryClientEvent
   | KOCEvents.KOCCommerceGetCrewInventoryClientEvent
   | KOCEvents.KOCCommerceInventoryEquipClientEvent
   | KOCEvents.KOCCommercePurchaseClientEvent
