@@ -6,6 +6,7 @@ export * from './block/unblock_player_emitter';
 export * from './commerce/commerce_get_inventory_emitter';
 export * from './commerce/commerce_get_crew_inventory_emitter';
 export * from './commerce/commerce_inventory_equip_emitter';
+export * from './commerce/commerce_redeem_code_emitter';
 export * from './commerce/commerce_purchase_emitter';
 
 // Crew
