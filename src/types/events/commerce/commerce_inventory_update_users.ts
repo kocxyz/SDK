@@ -1,6 +1,7 @@
+import { UUID } from 'crypto';
 import { KOCEvent } from '../event';
 import { KOCUserId } from '../../user';
-import { KOCCommerceInventoryConsumable, KOCCommerceInventoryEquipment, KOCDatabaseId } from '@/types';
+import { KOCCommerceInventoryEquipment, KOCDatabaseId } from '@/types';
 
 export type KOCCommerceInventoryUpdateUsersServerEvent = KOCEvent & {
   type: '_commerce_inventory_update_users';
@@ -13,7 +14,13 @@ export type KOCCommerceInventoryUpdateUsersServerEvent = KOCEvent & {
 type KOCCommerceInventoryUpdateUser = {
   user_id: KOCUserId;
   equipment: KOCCommerceInventoryEquipment;
-  consumables: KOCCommerceInventoryConsumable[];
+  consumables: KOCCommerceInventoryUpdateUsersConsumable[];
   durables: KOCDatabaseId[];
   favourites: number;
+};
+
+export type KOCCommerceInventoryUpdateUsersConsumable = {
+  itemDefAlias: KOCDatabaseId;
+  itemId: UUID;
+  itemCount: number;
 };
