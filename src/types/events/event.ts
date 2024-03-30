@@ -56,6 +56,7 @@ export type KOCServerEvent =
   | KOCEvents.KOCCommerceCatalogUpdateServerEvent
   | KOCEvents.KOCCommerceCrewInventoryUpdateServerEvent
   | KOCEvents.KOCCommerceInventoryUpdateServerEvent
+  | KOCEvents.KOCCommerceInventoryUpdateUsersServerEvent
   | KOCEvents.KOCCommercePurchaseResultServerEvent
   // Contract
   | KOCEvents.KOCContractProgressGetServerEvent

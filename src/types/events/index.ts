@@ -15,6 +15,7 @@ export * from './commerce/commerce_crew_inventory_update';
 export * from './commerce/commerce_get_crew_inventory';
 export * from './commerce/commerce_inventory_equip';
 export * from './commerce/commerce_inventory_update';
+export * from './commerce/commerce_inventory_update_users';
 export * from './commerce/commerce_purchase';
 export * from './commerce/commerce_purchase_result';
 

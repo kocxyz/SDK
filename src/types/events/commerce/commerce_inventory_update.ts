@@ -33,16 +33,16 @@ export type KOCCommerceInventoryUpdateServerEvent = KOCEvent & {
   balance: KOCCommerceInventoryBalance;
 };
 
-type KOCCommerceInventoryConsumable = {
+export type KOCCommerceInventoryConsumable = {
   [key: KOCDatabaseId]: number;
   id: UUID;
 };
 
-type KOCCommerceInventoryBalance = {
+export type KOCCommerceInventoryBalance = {
   entries: KOCCommerceInventoryBalanceEntry[];
 };
 
-type KOCCommerceInventoryBalanceEntry = {
+export type KOCCommerceInventoryBalanceEntry = {
   currencyAlias: KOCCommerceCurrency;
   balance: number;
 };
