@@ -18,6 +18,15 @@ export type KOCCommerceInventoryEquipment =
       [key in `${0 | 1 | 2 | 3 | 4 | 5}.${KOCCommerceInventoryEquipmentTypes}`]: KOCDatabaseId;
     };
 
+export type KOCCommerceRarity =
+  | 'k_rarity_none'
+  | 'k_rarity_common'
+  | 'k_rarity_uncommon'
+  | 'k_rarity_rare'
+  | 'k_rarity_epic'
+  | 'k_rarity_legendary'
+  | 'k_rarity_chrome';
+
 export type KOCCommerceInventoryEquipmentTypes =
   | 'k_accessory_type_expression_brag'
   | 'k_accessory_type_expression_intro'
