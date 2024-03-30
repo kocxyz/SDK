@@ -19,13 +19,13 @@ export type KOCWelcomeServerEvent = KOCEvent & {
    * The switch configuration of the server
    */
   switches: {
-    [key in KOCServerSwitches]: boolean;
+    [key in KOCServerSwitches]?: boolean;
   };
   /**
    * The tunables configuration of the server
    */
   tunables: {
-    [key in KOCServerTunables]: boolean;
+    [key in KOCServerTunables]?: number;
   };
   /**
    * The cohorts of the server
