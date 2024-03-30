@@ -4,7 +4,7 @@ export type KOCNewsServerEvent = KOCEvent & {
   type: '_news';
   news: {
     new_news: unknown[];
-    triggers: KOCNewsTrigger;
+    triggers: KOCNewsTrigger[];
   };
 };
 
@@ -18,20 +18,20 @@ type KOCNewsActionsTrigger = {
 
 type KOCNewsActionRender = {
   name: 'title' | 'text' | 'image_index';
-  value: string | null;
+  value: string;
 };
 
 type KOCNewsActionRenderTitle = KOCNewsActionRender & {
   name: 'title';
-  value: null;
+  value: string;
 };
 
 type KOCNewsActionRenderText = KOCNewsActionRender & {
   name: 'text';
-  value: null;
+  value: string;
 };
 
 type KOCNewsActionRenderImageIndex = KOCNewsActionRender & {
   name: 'image_index';
-  value: '0';
+  value: string;
 };
