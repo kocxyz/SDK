@@ -1,6 +1,5 @@
 import { KOCClientEmitter } from '@/websocket/emitter/emitter';
-import { CommerceBalance, CommerceEntry, KOCClientEvent, KOCServerEvent } from '@/types';
-import { KOCWebsocketWrapper } from '@/websocket/wrapper';
+import { CommerceBalance, CommerceEntry } from '@/types';
 
 type EmitterCommercePurchaseParameters = {
   entries: CommerceEntry[];
