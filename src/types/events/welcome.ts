@@ -44,9 +44,35 @@ export type KOCWelcomeServerEvent = KOCEvent & {
   playlists: KOCServerPlaylist[];
   username_visible: boolean;
   is_telemetry_allowed: boolean;
-  packages: unknown[];
+  packages: KOCContentUpdatePackage[];
   /**
    * The users configuration that is stored on the server
    */
   user_settings: KOCUserSettings;
+};
+
+export type KOCContentUpdatePackage = {
+  /**
+   * The id of the content update.
+   */
+  id: number;
+  /**
+   * The URL where the content update can be downloaded.
+   *
+   * @example http://localhost:8080/patch.zip
+   */
+  url: string;
+  /**
+   * The name of the file that will be stored on disk.
+   */
+  file_name: string;
+  /**
+   * The signature of the file.
+   * Will be verified using the public key of the server.
+   */
+  file_hash: string;
+  /**
+   * The size of the file in bytes.
+   */
+  file_size_bytes: number;
 };
