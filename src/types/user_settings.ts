@@ -1,11 +1,11 @@
-import { KOCDatabaseId } from "./id";
+import { KOCDatabaseId } from './id';
 
 // https://stackoverflow.com/a/70307091
 type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
   ? Acc[number]
-  : Enumerate<N, [...Acc, Acc['length']]>
+  : Enumerate<N, [...Acc, Acc['length']]>;
 
-type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>> | T
+type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>> | T;
 
 export type KOCUserSettings = {
   catch_private_server: '1';
@@ -53,7 +53,6 @@ export type KOCUserSettings = {
   // Sprint Cancel Delay
   'control_user_settings_data.vscript.sprint_throw_cancel_delay': `${Range<0, 8>}`;
 
-
   'control_user_settings_data.vscript.hide_spectating_hud_toggle': `${number}`;
   'control_user_settings_data.vscript.initialized': `${number}`;
   'presence_user_settings_data.vscript.appear_offline': `${number}`;
@@ -98,7 +97,7 @@ export type KOCUserSettings = {
   respawn_tips_index: `${number}`;
   velan_login_legal_terms_accepted: `${number}`;
   market_backfilled_day: `${number}`;
-  market_backfilled_offers_0: KOCDatabaseId;
+  market_backfilled_offers_0: KOCDatabaseId | 'NULL_OFFER';
   contracts_viewed_utc_timestamp: `${number}`;
   tracked_contract_def_a: `${number}`;
   tracked_contract_def_b: `${number}`;
@@ -203,8 +202,8 @@ type KOCUserSettingsKeymapType =
   // Push-to-Talk
   | 'keymap_push_to_talk_1'
   // Match / Contracts Stats
-  | 'keymap_mid_match_menu_1'
+  | 'keymap_mid_match_menu_1';
 
 type KOCUserSettingsKeymap = {
-  [key in KOCUserSettingsKeymapType]: KOCUserSettingsKeymapValue
-}
+  [key in KOCUserSettingsKeymapType]: KOCUserSettingsKeymapValue;
+};
