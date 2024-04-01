@@ -15,7 +15,7 @@ export type KOCCommerceCatalogUpdateServerEvent = KOCEvent & {
 /**
  * A generic offer
  */
-type KOCCommerceCatalogOffer = {
+export type KOCCommerceCatalogOffer = {
   items?: {
     [key: KOCDatabaseId]: number;
   };
@@ -32,7 +32,7 @@ type KOCCommerceCatalogOffer = {
 /**
  * And offer containing both items as well as another currency.
  */
-type KOCCommerceCatalogOfferCurrencyAndItems = {
+export type KOCCommerceCatalogOfferCurrencyAndItems = {
   items: {
     [key: KOCDatabaseId]: number;
   };
@@ -50,7 +50,7 @@ type KOCCommerceCatalogOfferCurrencyAndItems = {
  * And offer that only contains another type of currency.
  * Basically an offer for currency conversion.
  */
-type KOCCommerceCatalogOfferCurrency = KOCCommerceCatalogOffer & {
+export type KOCCommerceCatalogOfferCurrency = KOCCommerceCatalogOffer & {
   currencies: {
     [key in KOCCommerceCatalogCurrency]?: number;
   };
@@ -64,8 +64,8 @@ type KOCCommerceCatalogOfferCurrency = KOCCommerceCatalogOffer & {
 /**
  * And offer that only contains items
  */
-type KOCCommerceCatalogOfferItems = KOCCommerceCatalogOffer & {
-  items?: {
+export type KOCCommerceCatalogOfferItems = KOCCommerceCatalogOffer & {
+  items: {
     [key: KOCDatabaseId]: number;
   };
   price: {
@@ -78,9 +78,9 @@ type KOCCommerceCatalogOfferItems = KOCCommerceCatalogOffer & {
 /**
  * The type of currency one gets with the offer
  */
-type KOCCommerceCatalogCurrency = Extract<KOCCommerceCurrency, 'VAR' | 'CUR'>;
+export type KOCCommerceCatalogCurrency = Extract<KOCCommerceCurrency, 'VAR' | 'CUR'>;
 
 /**
  * The type of currency used to pay
  */
-type KOCCommerceCatalogPrice = Extract<KOCCommerceCurrency, 'CUR' | 'CUR_HW' | 'CUR_HR' | 'CUR_HOLOWEEN'>;
+export type KOCCommerceCatalogPrice = Extract<KOCCommerceCurrency, 'CUR' | 'CUR_HW' | 'CUR_HR' | 'CUR_HOLOWEEN'>;
