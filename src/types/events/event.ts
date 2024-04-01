@@ -84,6 +84,8 @@ export type KOCServerEvent =
   | KOCEvents.KOCPingDisplayValuesServerEvent
   // Players
   | KOCEvents.KOCRecentPlayersGetServerEvent
+  // Playlists
+  | KOCEvents.KOCPlaylistsGetServerEvent
   // Replay
   | KOCEvents.KOCRelayServerEvent
   // Street Rank

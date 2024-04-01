@@ -71,6 +71,9 @@ export * from './ping/ping_display_values';
 // Players
 export * from './players/recent_players_get';
 
+// Playlists
+export * from './playlists/get_playlists';
+
 // Relay
 export * from './relay/relay';
 
