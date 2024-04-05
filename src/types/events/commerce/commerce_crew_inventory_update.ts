@@ -1,5 +1,5 @@
-import { KOCDatabaseId } from '../../id';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { UUID4Seg } from '@/types/id';
 
 export type KOCCommerceCrewInventoryUpdateServerEvent = KOCEvent & {
   type: '_commerce_crew_inventory_update';
@@ -7,6 +7,6 @@ export type KOCCommerceCrewInventoryUpdateServerEvent = KOCEvent & {
 };
 
 type CrewInventoryEntry = {
-  guid: KOCDatabaseId;
+  guid: UUID4Seg;
   quantity: number;
 };

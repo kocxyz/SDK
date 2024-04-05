@@ -1,4 +1,4 @@
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
 
 /**
  * An event that will be emitted as a reponse to a

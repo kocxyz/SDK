@@ -1,5 +1,5 @@
-import { KOCEvent } from '../event';
-import { KOCServerPlaylist } from '@/types';
+import { KOCEvent } from '@/types/events/event';
+import { KOCServerPlaylist } from '@/types/playlist';
 
 export type KOCPlaylistsGetServerEvent = KOCEvent & {
   type: '_playlists_get';

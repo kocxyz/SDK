@@ -1,6 +1,5 @@
-import { UUID } from 'crypto';
-import { KOCPersonaId, KOCUserId } from '../../user';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { KOCPersonaId, KOCUserId, UUID5Seg } from '@/types/id';
 
 export type KOCGroupGetServerEvent = KOCEvent & {
   type: '_group_get';
@@ -21,7 +20,7 @@ type UpdateEntry = {
   publisher_username: string;
   publisher_username_code: number;
   username_visible: boolean;
-  player_icon: UUID;
+  player_icon: UUID5Seg;
   xp: number;
   online_state: number;
   rich_presence: -1;

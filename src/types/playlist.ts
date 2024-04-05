@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { UUID5Seg } from '@/types/id';
 
 export type KOCServerPlaylistMatchFlow =
   // Maybe Private Match??
@@ -10,7 +10,7 @@ export type KOCServerPlaylistMatchFlow =
 
 export type KOCServerPlaylist = {
   match_flow: KOCServerPlaylistMatchFlow;
-  playlist_guid: UUID;
+  playlist_guid: UUID5Seg;
   playlist_name: string;
   active_custom: boolean;
   active_tutorial: boolean;

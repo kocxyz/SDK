@@ -1,6 +1,5 @@
-import { UUID } from 'crypto';
-import { KOCEvent } from '../event';
-import { KOCUserId } from '../../user';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId, UUID5Seg } from '@/types/id';
 
 export type KOCFriendsGetServerEvent = KOCEvent & {
   type: '_friends_get';
@@ -17,7 +16,7 @@ type KOCFriendEntry = {
   publisher_username: string;
   publisher_username_code: number;
   username_visible: boolean;
-  player_icon: UUID;
+  player_icon: UUID5Seg;
   xp: number;
   online_state: number;
   rich_presence: number;

@@ -1,8 +1,8 @@
-import { UUID } from 'crypto';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { UUID5Seg } from '@/types/id';
 
 export type KOCPingDisplayRegion = {
-  uuid: UUID;
+  uuid: UUID5Seg;
   ping_str: `${number}`;
 };
 

@@ -1,5 +1,5 @@
-import { KOCWebsocketWrapper } from '../wrapper';
 import { KOCClientEvent, KOCServerEvent } from '@/types';
+import { KOCWebsocketWrapper } from '@/websocket/wrapper';
 
 export type KOCClientEmitter<Parameters> = (
   client: KOCWebsocketWrapper<KOCServerEvent, KOCClientEvent>,

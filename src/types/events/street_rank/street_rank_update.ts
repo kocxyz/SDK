@@ -1,4 +1,4 @@
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
 
 export type KOCStreetRankUpdateServerEvent = KOCEvent & {
   type: '_street_rank_update';

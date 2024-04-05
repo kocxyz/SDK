@@ -1,9 +1,7 @@
-import { UUID } from 'crypto';
-import { IPAddress } from '../../connection';
-import { KOCUserId } from '../../user';
-import { KOCEvent } from '../event';
-import { KOCDatabaseId } from '../../id';
-import { KOCServerPlaylistMatchFlow } from '../../playlist';
+import { IPAddress } from '@/types/connection';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
+import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
 export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
   type: '_matchmaking_advertise_server';
@@ -11,11 +9,11 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
   multiplay_server_id: number;
   multiplay_profile_id: number;
   group_leader: KOCUserId;
-  game_server_uuid: KOCDatabaseId;
-  game_server_region_id: UUID;
+  game_server_uuid: UUID4Seg;
+  game_server_region_id: UUID5Seg;
   next_datacenter: unknown;
   autodetect_datacenter: unknown;
-  game_server_fleet_id: UUID;
+  game_server_fleet_id: UUID5Seg;
   /**
    * Path on the server to the log file of
    * the game server.
@@ -23,7 +21,7 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
    * @example C:\\users\\root\\AppData\\Local\\KnockoutCityServer/logs/2023.06.08-17.44.46.481-server.txt
    */
   game_server_log: string;
-  game_session_guid: KOCDatabaseId;
+  game_session_guid: UUID4Seg;
   game_server_match_flow: Extract<KOCServerPlaylistMatchFlow, 2>;
   /**
    * The server playlist guid.
@@ -31,7 +29,7 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
    * For the Hideout use a zero UUID
    * (`00000000-0000-0000-0000-000000000000`)
    */
-  game_server_playlist_guid: UUID;
+  game_server_playlist_guid: UUID5Seg;
   map_override: -1;
   ball_override: -1;
   bot_override: false;

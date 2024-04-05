@@ -1,8 +1,8 @@
-import { UUID } from 'crypto';
+import { UUID5Seg } from '@/types/id';
 import { IPAddress } from './connection';
 
 export type KOCServerRegion = {
-  region_id: UUID;
+  region_id: UUID5Seg;
   multiplay_locationid: number;
   ip_addresses: IPAddress[];
   port: number;

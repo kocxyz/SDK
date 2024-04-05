@@ -1,4 +1,4 @@
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
 
 /**
  * An event can be emitted to receive the user inventory.

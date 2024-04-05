@@ -1,5 +1,5 @@
-import { KOCUserId } from '@/types';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId } from '@/types/id';
 
 type KOCFriendRequestEntry = {
   user_id: KOCUserId;

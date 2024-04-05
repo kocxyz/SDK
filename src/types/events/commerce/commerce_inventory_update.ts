@@ -1,9 +1,7 @@
-import { UUID } from 'crypto';
-import { KOCDatabaseId } from '../../id';
-import { KOCEvent } from '../event';
-import { KOCCommerceCurrency } from '../../currencies';
-import { KOCUserId } from '../../user';
-import { KOCCommerceInventoryEquipment } from '../../commerce';
+import { KOCCommerceInventoryEquipment } from '@/types/commerce';
+import { KOCCommerceCurrency } from '@/types/currencies';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
 
 export type KOCCommerceInventoryUpdateServerEvent = KOCEvent & {
   type: '_commerce_inventory_update';
@@ -16,7 +14,7 @@ export type KOCCommerceInventoryUpdateServerEvent = KOCEvent & {
     /**
      * The different non-consumables like clothing, effects, animations, ... the account owns
      */
-    durables: KOCDatabaseId[];
+    durables: UUID4Seg[];
     favourites: number;
     /**
      * The different consumables the account owns
@@ -34,8 +32,8 @@ export type KOCCommerceInventoryUpdateServerEvent = KOCEvent & {
 };
 
 export type KOCCommerceInventoryConsumable = {
-  [key: KOCDatabaseId]: number;
-  id: UUID;
+  [key: UUID4Seg]: number;
+  id: UUID5Seg;
 };
 
 export type KOCCommerceInventoryBalance = {

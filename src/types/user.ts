@@ -1,12 +1,4 @@
-import { KOCGroupVisibility } from './group';
-
-export type KOCUserId = {
-  velan: number;
-};
-
-export type KOCPersonaId = {
-  privsrv: 0;
-};
+import { KOCGroupVisibility } from '@/types/group';
 
 export type KOCUserPairs = {
   equipment_data_initialized: `${number}`;

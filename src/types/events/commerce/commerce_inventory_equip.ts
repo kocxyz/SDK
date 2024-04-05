@@ -1,6 +1,6 @@
-import { KOCCommerceInventoryEquipment } from '../../commerce';
-import { KOCUserId } from '../../user';
-import { KOCEvent } from '../event';
+import { KOCCommerceInventoryEquipment } from '@/types/commerce';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId } from '@/types/id';
 
 /**
  * An event that can be used to equip an non-consumable

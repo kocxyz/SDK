@@ -1,11 +1,11 @@
-import { KOCDatabaseId } from '../../id';
-import { KOCEvent } from '../event';
-import { KOCCommerceCurrency } from '../../currencies';
+import { KOCCommerceCurrency } from '@/types/currencies';
+import { KOCEvent } from '@/types/events/event';
+import { UUID4Seg } from '@/types/id';
 
 export type KOCCommerceCatalogUpdateServerEvent = KOCEvent & {
   type: '_commerce_catalog_update';
   offers: {
-    [key: KOCDatabaseId]:
+    [key: UUID4Seg]:
       | KOCCommerceCatalogOfferCurrencyAndItems
       | KOCCommerceCatalogOfferCurrency
       | KOCCommerceCatalogOfferItems;
@@ -17,7 +17,7 @@ export type KOCCommerceCatalogUpdateServerEvent = KOCEvent & {
  */
 export type KOCCommerceCatalogOffer = {
   items?: {
-    [key: KOCDatabaseId]: number;
+    [key: UUID4Seg]: number;
   };
   currencies?: {
     [key in KOCCommerceCatalogCurrency]?: number;
@@ -34,7 +34,7 @@ export type KOCCommerceCatalogOffer = {
  */
 export type KOCCommerceCatalogOfferCurrencyAndItems = {
   items: {
-    [key: KOCDatabaseId]: number;
+    [key: UUID4Seg]: number;
   };
   currencies: {
     [key in KOCCommerceCatalogCurrency]?: number;
@@ -66,7 +66,7 @@ export type KOCCommerceCatalogOfferCurrency = KOCCommerceCatalogOffer & {
  */
 export type KOCCommerceCatalogOfferItems = KOCCommerceCatalogOffer & {
   items: {
-    [key: KOCDatabaseId]: number;
+    [key: UUID4Seg]: number;
   };
   price: {
     default: {

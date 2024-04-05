@@ -1,5 +1,5 @@
-import { KOCUserId } from '../../user';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId } from '@/types/id';
 
 /**
  * An event that is used to unblock a player.

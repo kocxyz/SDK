@@ -1,4 +1,4 @@
-import { KOCDatabaseId } from './id';
+import { UUID4Seg } from './id';
 
 // https://stackoverflow.com/a/70307091
 type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
@@ -97,7 +97,7 @@ export type KOCUserSettings = {
   respawn_tips_index: `${number}`;
   velan_login_legal_terms_accepted: `${number}`;
   market_backfilled_day: `${number}`;
-  market_backfilled_offers_0: KOCDatabaseId | 'NULL_OFFER';
+  market_backfilled_offers_0: UUID4Seg | 'NULL_OFFER';
   contracts_viewed_utc_timestamp: `${number}`;
   tracked_contract_def_a: `${number}`;
   tracked_contract_def_b: `${number}`;

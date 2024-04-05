@@ -1,6 +1,5 @@
-import { UUID } from 'crypto';
-import { KOCUserId } from '@/types';
-import { KOCEvent } from '../event';
+import { KOCEvent } from "@/types/events/event";
+import { KOCUserId, UUID5Seg } from "@/types/id";
 
 type KOCBrawler = {
   user_id: KOCUserId;
@@ -8,7 +7,7 @@ type KOCBrawler = {
   username_visible: boolean;
   publisher_username: string;
   publisher_username_code: number;
-  player_icon: UUID;
+  player_icon: UUID5Seg;
   xp: number;
 };
 

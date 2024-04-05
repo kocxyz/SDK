@@ -1,4 +1,4 @@
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
 
 export type KOCCrewJoinRequestsGetServerEvent = KOCEvent & {
   type: '_crew_join_requests_get';

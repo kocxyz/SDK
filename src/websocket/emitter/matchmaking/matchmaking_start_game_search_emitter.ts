@@ -1,6 +1,5 @@
-import { UUID } from 'crypto';
 import { KOCClientEmitter } from '@/websocket/emitter/emitter';
-import { KOCServerPlaylistMatchFlow } from '@/types';
+import { KOCServerPlaylistMatchFlow, UUID5Seg } from '@/types';
 
 type EmitterMatchmakingStartGameSearchParameters = {
   /**
@@ -9,7 +8,7 @@ type EmitterMatchmakingStartGameSearchParameters = {
    * For the Hideout use a zero UUID
    * (`00000000-0000-0000-0000-000000000000`)
    */
-  playlistUuid: UUID;
+  playlistUuid: UUID5Seg;
   matchflow: Extract<KOCServerPlaylistMatchFlow, 2>;
   /**
    * An Id to identify the response from the server.

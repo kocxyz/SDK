@@ -1,4 +1,4 @@
-import { KOCDatabaseId } from './id';
+import { UUID4Seg } from '@/types/id';
 
 /**
  * The different equiped items for all the accounts characters.
@@ -6,16 +6,16 @@ import { KOCDatabaseId } from './id';
  */
 export type KOCCommerceInventoryEquipment =
   | {
-      [key in `${0 | 1 | 2}.${KOCCommerceInventoryEquipmentTypes}`]: KOCDatabaseId;
+      [key in `${0 | 1 | 2}.${KOCCommerceInventoryEquipmentTypes}`]: UUID4Seg;
     }
   | {
-      [key in `${0 | 1 | 2 | 3}.${KOCCommerceInventoryEquipmentTypes}`]: KOCDatabaseId;
+      [key in `${0 | 1 | 2 | 3}.${KOCCommerceInventoryEquipmentTypes}`]: UUID4Seg;
     }
   | {
-      [key in `${0 | 1 | 2 | 3 | 4}.${KOCCommerceInventoryEquipmentTypes}`]: KOCDatabaseId;
+      [key in `${0 | 1 | 2 | 3 | 4}.${KOCCommerceInventoryEquipmentTypes}`]: UUID4Seg;
     }
   | {
-      [key in `${0 | 1 | 2 | 3 | 4 | 5}.${KOCCommerceInventoryEquipmentTypes}`]: KOCDatabaseId;
+      [key in `${0 | 1 | 2 | 3 | 4 | 5}.${KOCCommerceInventoryEquipmentTypes}`]: UUID4Seg;
     };
 
 export type KOCCommerceRarity =

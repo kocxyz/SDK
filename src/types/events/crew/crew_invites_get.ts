@@ -1,5 +1,5 @@
-import { KOCUserId } from '../../user';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId } from '@/types/id';
 
 export type KOCCrewInvitesGetServerEvent = KOCEvent & {
   type: '_crew_invites_get';

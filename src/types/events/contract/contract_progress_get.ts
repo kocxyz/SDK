@@ -1,5 +1,5 @@
-import { KOCDatabaseId } from '../../id';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { UUID4Seg } from '@/types/id';
 
 export type KOCContractProgressGetServerEvent = KOCEvent & {
   type: '_get_contract_progress';
@@ -9,7 +9,7 @@ export type KOCContractProgressGetServerEvent = KOCEvent & {
 type KOCContract = {
   id: number;
   progress: {
-    [key: KOCDatabaseId]: KOCContractProgress;
+    [key: UUID4Seg]: KOCContractProgress;
   };
   page_index: number;
   is_last_page: boolean;

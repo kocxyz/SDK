@@ -1,4 +1,4 @@
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
 
 export type KOCUserRequestPresenceByPartialNameClientEvent = KOCEvent & {
   type: '_user_request_presence_by_partial_name';

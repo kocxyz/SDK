@@ -1,5 +1,5 @@
-import { KOCEvent } from '../event';
-import { KOCDatabaseId } from '@/types/id';
+import { KOCEvent } from '@/types/events/event';
+import { UUID4Seg } from '@/types/id';
 
 /**
  * An event can be emitted to purchase an item.
@@ -12,7 +12,7 @@ export type KOCCommercePurchaseClientEvent = KOCEvent & {
 };
 
 export type CommerceEntry = {
-  offerAlias: KOCDatabaseId;
+  offerAlias: UUID4Seg;
 
   priceName: 'default';
   payment: CommercePayment[];

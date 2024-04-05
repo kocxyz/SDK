@@ -1,10 +1,10 @@
-import { KOCCohorts } from '../cohorts';
-import { KOCServerPlaylist } from '../playlist';
-import { KOCServerRegion } from '../region';
-import { KOCServerSwitches } from '../switches';
-import { KOCServerTunables } from '../tunables';
-import { KOCUserSettings } from '../user_settings';
-import { KOCEvent } from './event';
+import { KOCCohorts } from '@/types/cohorts';
+import { KOCEvent } from '@/types/events/event';
+import { KOCServerPlaylist } from '@/types/playlist';
+import { KOCServerRegion } from '@/types/region';
+import { KOCServerSwitches } from '@/types/switches';
+import { KOCServerTunables } from '@/types/tunables';
+import { KOCUserSettings } from '@/types/user_settings';
 
 export type KOCWelcomeServerEvent = KOCEvent & {
   type: '_welcome';

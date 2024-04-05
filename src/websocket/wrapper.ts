@@ -1,5 +1,5 @@
 import { KOCEvent } from '@/types';
-import { EventEmitter, EventUnsubscribe } from './event_emitter';
+import { EventEmitter, EventUnsubscribe } from '@/websocket/event_emitter';
 
 export type Connection = {
   onMessage: (callback: (data: string) => void) => void;

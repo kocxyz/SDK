@@ -1,4 +1,4 @@
-import type * as KOCEvents from '.';
+import type * as KOCEvents from '@/types/events';
 
 export type KOCEvent = {
   type: `_${string}`;

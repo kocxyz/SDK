@@ -1,6 +1,6 @@
-import { UUID } from 'crypto';
-import { KOCEvent } from '../event';
-import { KOCServerPlaylistMatchFlow } from '../../playlist';
+import { KOCEvent } from '@/types/events/event';
+import { UUID5Seg } from '@/types/id';
+import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
 export type KOCMatchmakingStartGameSearchClientEvent = KOCEvent & {
   type: '_matchmaking_start_game_search';
@@ -10,7 +10,7 @@ export type KOCMatchmakingStartGameSearchClientEvent = KOCEvent & {
    * For the Hideout use a zero UUID
    * (`00000000-0000-0000-0000-000000000000`)
    */
-  playlist_guid: UUID;
+  playlist_guid: UUID5Seg;
   /**
    * The Flow of the Match that should be searched
    * for.

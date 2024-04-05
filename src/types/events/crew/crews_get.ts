@@ -1,6 +1,5 @@
-import { UUID } from 'crypto';
-import { KOCUserId } from '../../user';
-import { KOCEvent } from '../event';
+import { KOCEvent } from '@/types/events/event';
+import { KOCUserId, UUID5Seg } from '@/types/id';
 
 export type KOCCrewsGetServerEvent = KOCCrewsGetNoCrew | KOCCrewsGetInCrew;
 
@@ -16,9 +15,9 @@ type KOCCrewsGetInCrew = KOCEvent & {
   namer: KOCUserId;
   name: string;
   name_visible: boolean;
-  uuid: UUID;
+  uuid: UUID5Seg;
   crew_code: number;
-  crew_banner: UUID;
+  crew_banner: UUID5Seg;
   full_update: boolean;
   full_list: boolean;
   update: unknown[];

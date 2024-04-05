@@ -1,10 +1,9 @@
-import type { UUID } from 'node:crypto';
 import * as crypto from 'node:crypto';
 import { client as WebsocketClient, connection as Connection } from 'websocket';
 
-import type { KOCClientEvent, KOCServerEvent, KOCWebsocketServerUrl } from '@/types';
-import { KOCWebsocketWrapper } from './wrapper';
-import { adapterWebsocket } from './adapters';
+import type { KOCClientEvent, KOCServerEvent, KOCWebsocketServerUrl, UUID5Seg } from '@/types';
+import { KOCWebsocketWrapper } from '@/websocket/wrapper';
+import { adapterWebsocket } from '@/websocket/adapters';
 
 export class KOCWebsocketClient extends KOCWebsocketWrapper<KOCServerEvent, KOCClientEvent> {
   /**
@@ -25,7 +24,7 @@ export class KOCWebsocketClient extends KOCWebsocketWrapper<KOCServerEvent, KOCC
   /**
    * The Session ID for the client.
    */
-  private gameSessionId: UUID;
+  private gameSessionId: UUID5Seg;
 
   /**
    * The Game Executable Version
@@ -46,7 +45,7 @@ export class KOCWebsocketClient extends KOCWebsocketWrapper<KOCServerEvent, KOCC
    * @param address The address of the Knockout City Server.
    * @param gameSessionId The Session Id of the client. (Default: Random generated)
    */
-  constructor(address: KOCWebsocketServerUrl, gameSessionId: UUID = crypto.randomUUID()) {
+  constructor(address: KOCWebsocketServerUrl, gameSessionId: UUID5Seg = crypto.randomUUID()) {
     super();
 
     this.address = address;
