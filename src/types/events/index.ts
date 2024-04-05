@@ -11,6 +11,7 @@ export * from './cohorts/cohorts';
 
 // Commerce
 export * from './commerce/commerce_catalog_update';
+export * from './commerce/commerce_crew_inventory_equip';
 export * from './commerce/commerce_crew_inventory_update';
 export * from './commerce/commerce_get_crew_inventory';
 export * from './commerce/commerce_get_inventory';
