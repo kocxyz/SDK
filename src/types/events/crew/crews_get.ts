@@ -13,6 +13,7 @@ type KOCCrewsGetInCrew = KOCEvent & {
   type: '_crews_get';
   full_update: boolean;
   full_list: boolean;
+  is_in_crew: true;
 
   update: KOCUser[];
 } & KOCCrew;
