@@ -12,6 +12,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCCommerceCrewInventoryEquipClientEvent
   | KOCEvents.KOCCommerceGetInventoryClientEvent
   | KOCEvents.KOCCommerceGetCrewInventoryClientEvent
+  | KOCEvents.KOCCommerceGetEquipmentUsersClientEvent
   | KOCEvents.KOCCommerceInventoryEquipClientEvent
   | KOCEvents.KOCCommerceRedeemCodeClientEvent
   | KOCEvents.KOCCommercePurchaseClientEvent
