@@ -1,9 +1,9 @@
-import type { PresenceState, RichPresenceState } from '@/types';
+import type { UserPresenceState, UserRichPresenceState } from '@/types';
 import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPresenceParameters = {
-  presenceState: PresenceState;
-  richPresenceState: RichPresenceState;
+  presenceState: UserPresenceState;
+  richPresenceState: UserRichPresenceState;
 };
 
 export const emitUserPresence: KOCClientEmitter<EmitterUserPresenceParameters> = (client, params) =>

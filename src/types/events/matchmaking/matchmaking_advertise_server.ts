@@ -9,11 +9,11 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
   multiplay_server_id: number;
   multiplay_profile_id: number;
   group_leader: KOCUserId;
-  game_server_uuid: UUID4Seg;
+  game_server_uuid: UUID5Seg;
   game_server_region_id: UUID5Seg;
+  game_server_fleet_id: UUID5Seg;
   next_datacenter: unknown;
   autodetect_datacenter: unknown;
-  game_server_fleet_id: UUID5Seg;
   /**
    * Path on the server to the log file of
    * the game server.
@@ -30,18 +30,18 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
    * (`00000000-0000-0000-0000-000000000000`)
    */
   game_server_playlist_guid: UUID5Seg;
-  map_override: -1;
-  ball_override: -1;
+  map_override: number;
+  ball_override: number;
   bot_override: false;
   owner: 0;
   /**
    * If its possible to connect as spectator.
    */
-  connect_as_spectator: false;
+  connect_as_spectator: boolean;
   /**
    * If its possible to join if in progress.
    */
-  join_in_progress: false;
+  join_in_progress: boolean;
   stats_upload_to_s3: false;
   request_id: number;
   connect_token: string;

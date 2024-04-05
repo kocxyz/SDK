@@ -1,5 +1,6 @@
+import { KOCCrew } from '@/types/crew';
 import { KOCEvent } from '@/types/events/event';
-import { KOCUserId, UUID5Seg } from '@/types/id';
+import { KOCUser } from '@/types/user';
 
 export type KOCCrewsGetServerEvent = KOCCrewsGetNoCrew | KOCCrewsGetInCrew;
 
@@ -10,15 +11,8 @@ type KOCCrewsGetNoCrew = KOCEvent & {
 
 type KOCCrewsGetInCrew = KOCEvent & {
   type: '_crews_get';
-  is_in_crew: true;
-  captain: KOCUserId;
-  namer: KOCUserId;
-  name: string;
-  name_visible: boolean;
-  uuid: UUID5Seg;
-  crew_code: number;
-  crew_banner: UUID5Seg;
   full_update: boolean;
   full_list: boolean;
-  update: unknown[];
-};
+
+  update: KOCUser[];
+} & KOCCrew;

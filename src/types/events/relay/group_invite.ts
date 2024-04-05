@@ -1,5 +1,6 @@
 import { KOCEvent } from '@/types/events/event';
 import { KOCUserId } from '@/types/id';
+import { Platform } from '@/types/platform';
 
 export type KOCRelayGroupInvite = KOCEvent & {
   type: '_relay';
@@ -14,13 +15,9 @@ export type KOCRelayGroupInvite = KOCEvent & {
      */
     sender_id: KOCUserId;
   };
-  // TODO: No clue what the ea: 1 does.
-  sender_first_party_id: { ea: 1 };
+  sender_first_party_id: { ea: number };
   sender_crossplay_allowed: boolean;
-  // TODO: Figure out what platform kind's exist but
-  // probably 7 will always be correct since only one
-  // platform exists for private servers.
-  sender_platform_kind: 7;
+  sender_platform_kind: Platform;
   /**
    * The message of the group invite.
    * As far as known now it will never be displayed.
