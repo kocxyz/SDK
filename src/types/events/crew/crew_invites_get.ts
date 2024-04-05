@@ -1,4 +1,5 @@
 import { KOCEvent } from '@/types/events/event';
+import { KOCUserId } from '@/types/id';
 import { KOCUser } from '@/types/user';
 
 export type KOCCrewInvitesGetServerEvent = KOCEvent & {
@@ -12,5 +13,5 @@ export type KOCCrewInvitesGetServerEvent = KOCEvent & {
   /**
    * An Array of UserId's from whom to remove the invites.
    */
-  remove?: KOCUser[];
+  remove?: KOCUserId[];
 };
