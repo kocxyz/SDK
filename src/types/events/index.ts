@@ -40,6 +40,7 @@ export * from './crew/crews_create';
 export * from './crew/crews_get';
 export * from './crew/crews_kick_user';
 export * from './crew/crews_leave';
+export * from './crew/crews_promote_captain';
 export * from './crew/crews_reject_invite';
 export * from './crew/crews_reject_join_request';
 export * from './crew/crews_send_invite';
