@@ -9,21 +9,21 @@ export type KOCErrorServerEvent = KOCEvent & {
   message: string;
 };
 
-type ErrorLevel =
+export type ErrorLevel =
   // ?
   13;
 
-type ErrorCode =
+export type ErrorCode =
   // ?
   | 20
   // Not enough permissions / Do not have a valid invite to join the invite-only group??
   | 24;
 
-type ErrorAction =
+export type ErrorAction =
   // ?
   2;
 
-type ErrorSystemCode =
+export type ErrorSystemCode =
   // ?
   | 1
   // Not enough permissions / Do not have a valid invite to join the invite-only group??
