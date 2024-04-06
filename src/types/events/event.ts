@@ -27,6 +27,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCCrewsPromoteCaptainClientEvent
   | KOCEvents.KOCCrewsRejectInviteClientEvent
   | KOCEvents.KOCCrewsRejectJoinRequestClientEvent
+  | KOCEvents.KOCCrewsReportNameClientEvent
   | KOCEvents.KOCCrewsSendInviteClientEvent
   | KOCEvents.KOCCrewsSendJoinRequestClientEvent
   // Friends
