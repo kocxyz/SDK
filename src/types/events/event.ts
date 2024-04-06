@@ -22,6 +22,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCCrewsAcceptJoinRequestClientEvent
   | KOCEvents.KOCCrewsChangeNameClientEvent
   | KOCEvents.KOCCrewsCreateClientEvent
+  | KOCEvents.KOCCrewsKickUserClientEvent
   | KOCEvents.KOCCrewsLeaveClientEvent
   | KOCEvents.KOCCrewsRejectInviteClientEvent
   | KOCEvents.KOCCrewsRejectJoinRequestClientEvent
