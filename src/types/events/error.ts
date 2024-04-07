@@ -6,6 +6,9 @@ import { KOCEvent } from '@/types/events/event';
  * 0.36#-8007: Temporary loss of connection with the server (reconnecting)
  * 1.41#-8008: Server not reachable
  * 1.143#0: Connection closed
+ * 1.150#0: Login Denied (e.g. banned or maintenance)
+ * 1.154#0: Content updates are available. Please sign in again for the most up-to-date experience.
+ * 1.155#0: Version mismatch
  */
 
 /**
@@ -47,7 +50,15 @@ export type ErrorCode =
   // Network Error | Sorry but you do not meet minumum requirements to access online features.
   | 50
   // Account | Duplicate Login detected.
-  | 141;
+  | 141
+  // Network Error | Custom message provided by message field. Used for denying access to the game (e.g. banned or maintenance)
+  | 150
+  // Network Error | Content updates are available. Please sign in again for the most up-to-date experience.
+  | 154
+  // Version mismatch | Either you or the player you are trying to join doesn't have the most recent version of Knockout City. Please ensure you both have updated the game and try again.
+  | 155
+  // Are you there? | You have been signed out due to inactivty. Sign back in to continue playing.
+  | 170;
 
 export type ErrorAction =
   // Small banner at the top left of the screen with the error codes
