@@ -105,5 +105,8 @@ export * from './error';
 // Welcome
 export * from './welcome';
 
+// Reporting
+export * from './report_submission_result';
+
 // Event Generic
 export * from './event';

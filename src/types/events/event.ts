@@ -104,4 +104,6 @@ export type KOCServerEvent =
   // Error
   | KOCEvents.KOCErrorServerEvent
   // Welcome
-  | KOCEvents.KOCWelcomeServerEvent;
+  | KOCEvents.KOCWelcomeServerEvent
+  // Reporting
+  | KOCEvents.KOCReportSubmissionResultServerEvent;
