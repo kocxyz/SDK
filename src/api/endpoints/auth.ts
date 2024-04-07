@@ -1,8 +1,11 @@
-import type { KOCPersonaId, KOCUserId } from '@/types';
-import { APIClient } from '@/api/client';
 import * as crypto from 'node:crypto';
+import type { KOCPersonaId, KOCUserId, UUID5Seg } from '@/types';
+import { APIClient } from '@/api/client';
+import { fast1a64 } from 'fnv-plus';
 
-type User = {
+const generateSecret = (secret: string): number => parseInt(fast1a64(secret) as unknown as string, 16);
+
+export type User = {
   id: KOCUserId;
   auth_provider: 'dev';
   username: string;
@@ -12,10 +15,25 @@ type User = {
   persona_id: KOCPersonaId;
 };
 
-type AuthenticateResponse = {
+export type AuthenticateResponse = {
   user: User;
   token: string;
   country: 'US';
+};
+
+export type AuthenticationRequest = {
+  credentials: {
+    username: string;
+    secret?: number;
+    platform: string;
+    pid: number;
+    system_guid: UUID5Seg;
+    version: number;
+    build: string;
+    boot_session_guid: UUID5Seg;
+    is_using_epic_launcher: boolean;
+  };
+  auth_provider: string;
 };
 
 /**
@@ -29,7 +47,7 @@ type AuthenticateResponse = {
  *
  * @returns
  */
-export const authenticate = (client: APIClient, username: string): Promise<AuthenticateResponse> => {
+export const authenticate = (client: APIClient, username: string, secret?: string): Promise<AuthenticateResponse> => {
   const systemGuid = crypto.randomUUID();
   const bootSessionGuid = crypto.randomUUID();
 
@@ -37,6 +55,7 @@ export const authenticate = (client: APIClient, username: string): Promise<Authe
     .post<AuthenticateResponse>('/api/auth', {
       credentials: {
         username: username,
+        secret: secret !== undefined ? generateSecret(secret) : undefined,
         platform: 'win64',
         pid: 0,
         system_guid: systemGuid,
@@ -46,6 +65,6 @@ export const authenticate = (client: APIClient, username: string): Promise<Authe
         is_using_epic_launcher: false,
       },
       auth_provider: 'dev',
-    })
+    } satisfies AuthenticationRequest)
     .then((response) => response.data);
 };
