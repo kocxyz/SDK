@@ -4,6 +4,7 @@ import { EventEmitter, EventUnsubscribe } from '@/websocket/event_emitter';
 export type Connection = {
   onMessage: (callback: (data: string) => void) => void;
   send: (data: string) => Promise<void>;
+  close: () => Promise<void>;
 };
 
 type OfUnion<T extends KOCEvent> = {
@@ -75,6 +76,13 @@ export class KOCWebsocketWrapper<ReceiveEvents extends KOCEvent, EmitEvents exte
    */
   public detachConnection() {
     this.connection = undefined;
+  }
+
+  /**
+   * Close the connection.
+   */
+  public close() {
+    this.connection?.close();
   }
 
   /**
