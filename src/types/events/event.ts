@@ -43,6 +43,8 @@ export type KOCClientEvent =
   | KOCEvents.KOCMatchmakingStartGameSearchClientEvent
   // Relay
   | KOCEvents.KOCRelayClientEvent
+  // Reporting
+  | KOCEvents.KOCReportServerClientEvent
   // User
   | KOCEvents.KOCPersistenceSetUserPairsClientEvent
   | KOCEvents.KOCPersistenceSetUserSettingsClientEvent
@@ -95,6 +97,8 @@ export type KOCServerEvent =
   | KOCEvents.KOCPlaylistsGetServerEvent
   // Replay
   | KOCEvents.KOCRelayServerEvent
+  // Reporting
+  | KOCEvents.KOCReportSubmissionResultServerEvent
   // Street Rank
   | KOCEvents.KOCStreetRankUpdateServerEvent
   // User
@@ -104,6 +108,4 @@ export type KOCServerEvent =
   // Error
   | KOCEvents.KOCErrorServerEvent
   // Welcome
-  | KOCEvents.KOCWelcomeServerEvent
-  // Reporting
-  | KOCEvents.KOCReportSubmissionResultServerEvent;
+  | KOCEvents.KOCWelcomeServerEvent;

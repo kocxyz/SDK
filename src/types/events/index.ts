@@ -83,6 +83,10 @@ export * from './playlists/get_playlists';
 // Relay
 export * from './relay/relay';
 
+// Reporting
+export * from './reporting/report_server';
+export * from './reporting/report_submission_result';
+
 // Street Rank
 export * from './street_rank/street_rank_update';
 
@@ -104,9 +108,6 @@ export * from './error';
 
 // Welcome
 export * from './welcome';
-
-// Reporting
-export * from './report_submission_result';
 
 // Event Generic
 export * from './event';
