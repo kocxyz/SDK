@@ -1,5 +1,5 @@
 import { KOCCrew } from '@/types/crew';
-import { KOCGroupVisibility } from '@/types/group';
+import { KOCGroupSize, KOCGroupVisibility } from '@/types/group';
 import { KOCUserId, UUID5Seg } from '@/types/id';
 import { Platform } from '@/types/platform';
 
@@ -96,7 +96,7 @@ export type KOCBaseUser = {
   /**
    * The size of the group the user is currently in.
    */
-  group_size: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  group_size: KOCGroupSize;
 };
 
 export type KOCUserNotInCrew = KOCBaseUser & {
@@ -130,4 +130,23 @@ export type KOCUserPairs = {
   'tutorial_5_complete.or': `${number}`;
   selected_character_index: `${0 | 1 | 2 | 3 | 4 | 5}`;
   group_visibility: KOCGroupVisibility;
+};
+
+export type KOCUserSkill = {
+  mmr: number;
+  skill_rating: number;
+  skill_rating_decayed: number;
+  volatility: number;
+  tier: number;
+  division: number;
+  division_progress: number;
+  win_streak: number;
+  season: number;
+  total_games_played: number;
+  wins: number;
+  mvps: number;
+  current_mmr: number;
+  current_tier: number;
+  current_division: number;
+  current_division_progress: number;
 };

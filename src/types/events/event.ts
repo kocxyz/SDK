@@ -73,6 +73,7 @@ export type KOCServerEvent =
   // Contract
   | KOCEvents.KOCContractProgressGetServerEvent
   // Crew
+  | KOCEvents.KOCCrewsContractsGetServerEvent
   | KOCEvents.KOCCrewsGetServerEvent
   | KOCEvents.KOCCrewJoinRequestsGetServerEvent
   | KOCEvents.KOCCrewsSearchResultServerEvent
@@ -80,6 +81,9 @@ export type KOCServerEvent =
   // Friends
   | KOCEvents.KOCFriendsGetServerEvent
   | KOCEvents.KOCFriendRequestsGetServerEvent
+  // Game Server
+  | KOCEvents.KOCAssignTeamsServerEvent
+  | KOCEvents.KOCServerCrewUpdateServerEvent
   // Groups
   | KOCEvents.KOCGroupGetServerEvent
   | KOCEvents.KOCGroupKickedServerEvent
@@ -89,6 +93,10 @@ export type KOCServerEvent =
   | KOCEvents.KOCMatchmakingStatusReportServerEvent
   // News
   | KOCEvents.KOCNewsServerEvent
+  // Penalty
+  | KOCEvents.KOCSetGroupQuitPenaltyServerEvent
+  | KOCEvents.KOCSetPenaltyDurationIfQuitServerEvent
+  | KOCEvents.KOCSetUserQuitPenaltyServerEvent
   // Ping
   | KOCEvents.KOCPingDisplayValuesServerEvent
   // Players
@@ -102,10 +110,19 @@ export type KOCServerEvent =
   // Street Rank
   | KOCEvents.KOCStreetRankUpdateServerEvent
   // User
-  | KOCEvents.KOCSetUserQuitPenaltyServerEvent
   | KOCEvents.KOCPersistenceGetUserPairsServerEvent
   | KOCEvents.KOCPresenceLookupGetServerEvent
   // Error
   | KOCEvents.KOCErrorServerEvent
   // Welcome
   | KOCEvents.KOCWelcomeServerEvent;
+
+export type KOCGameServerEvent =
+  // Crew
+  | KOCEvents.KOCCrewsRequestContractUpdateGameServerEvent
+  // GameServer
+  | KOCEvents.KOCGameServerCancelledNewPlayerRequestGameServerEvent
+  | KOCEvents.KOCGameServerRegisterGameServerEvent
+  | KOCEvents.KOCServerTimeDeltaGameServerEvent
+  // User
+  | KOCEvents.KOCUserConnectTokenStatsGameServerEvent;

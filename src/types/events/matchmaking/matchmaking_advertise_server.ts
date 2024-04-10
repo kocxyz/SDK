@@ -1,5 +1,6 @@
 import { IPAddress } from '@/types/connection';
 import { KOCEvent } from '@/types/events/event';
+import { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
 import { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
 import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
@@ -30,8 +31,8 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
    * (`00000000-0000-0000-0000-000000000000`)
    */
   game_server_playlist_guid: UUID5Seg;
-  map_override: number;
-  ball_override: number;
+  map_override: KOCMapOverride;
+  ball_override: KOCBallOverride;
   bot_override: false;
   owner: 0;
   /**

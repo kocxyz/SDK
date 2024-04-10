@@ -36,6 +36,7 @@ export * from './crew/crew_search_result';
 export * from './crew/crews_accept_invite';
 export * from './crew/crews_accept_join_request';
 export * from './crew/crews_change_name';
+export * from './crew/crews_contracts_get';
 export * from './crew/crews_create';
 export * from './crew/crews_get';
 export * from './crew/crews_kick_user';
@@ -44,6 +45,7 @@ export * from './crew/crews_promote_captain';
 export * from './crew/crews_reject_invite';
 export * from './crew/crews_reject_join_request';
 export * from './crew/crews_report_name';
+export * from './crew/crews_request_contract_update';
 export * from './crew/crews_send_invite';
 export * from './crew/crews_send_join_request';
 
@@ -54,6 +56,14 @@ export * from './friends/friends_get';
 export * from './friends/friends_reject_request';
 export * from './friends/friends_remove';
 export * from './friends/friends_send_request';
+
+// Game Server
+export * from './gameserver/assign_teams';
+export * from './gameserver/gameserver_cancelled_new_player_request';
+export * from './gameserver/gameserver_configure';
+export * from './gameserver/gameserver_register';
+export * from './gameserver/server_crew_update';
+export * from './gameserver/server_time_delta';
 
 // Group
 export * from './group/group_get';
@@ -70,6 +80,11 @@ export * from './matchmaking/matchmaking_start_game_search';
 
 // News
 export * from './news/news';
+
+// Penalty
+export * from './penalty/set_group_quit_penalty';
+export * from './penalty/set_penalty_duration_if_quit';
+export * from './penalty/set_user_quit_penalty';
 
 // Ping
 export * from './ping/ping_display_values';
@@ -95,7 +110,7 @@ export * from './user/persistence_get_user_pairs';
 export * from './user/persistence_set_user_pairs';
 export * from './user/persistence_set_user_settings';
 export * from './user/presence_lookup_get';
-export * from './user/user_quit_penalty';
+export * from './user/user_connect_token_stats';
 export * from './user/user_report_abuse';
 export * from './user/user_set_presence';
 export * from './user/user_request_presence_by_partial_name';
