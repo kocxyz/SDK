@@ -84,6 +84,7 @@ export type KOCServerEvent =
   // Game Server
   | KOCEvents.KOCAssignTeamsServerEvent
   | KOCEvents.KOCServerCrewUpdateServerEvent
+  | KOCEvents.KOCGameServerConfigureServerEvent
   // Groups
   | KOCEvents.KOCGroupGetServerEvent
   | KOCEvents.KOCGroupKickedServerEvent
