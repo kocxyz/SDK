@@ -4,53 +4,55 @@ import { KOCGameServerPlaylist, KOCServerPlaylistMatchFlow } from '@/types/playl
 import { KOCServerSwitches } from '@/types/switches';
 import { KOCServerTunables } from '@/types/tunables';
 
+export const KOC_BALL_OVERRIDE_RANDOM = -1;
+export const KOC_BALL_OVERRIDE_BOMB_BALL = 2;
+export const KOC_BALL_OVERRIDE_MULTI_BALL = 3;
+export const KOC_BALL_OVERRIDE_CAGE_BALL = 4;
+export const KOC_BALL_OVERRIDE_MOON_BALL = 5;
+export const KOC_BALL_OVERRIDE_SNIPER_BALL = 6;
+export const KOC_BALL_OVERRIDE_SODA_BALL = 7;
+export const KOC_BALL_OVERRIDE_BOOMERANG_BALL = 9;
+export const KOC_BALL_OVERRIDE_POISON_BALL = 10;
+export const KOC_BALL_OVERRIDE_ANY_BALL = 11;
+
 export type KOCBallOverride =
-  /** Random */
-  | -1
-  /** Bomb Ball */
-  | 2
-  /** Multi Ball */
-  | 3
-  /** Cage Ball */
-  | 4
-  /** Moon Ball */
-  | 5
-  /** Sniper Ball */
-  | 6
-  /** Soda Ball */
-  | 7
-  /** Boomerang Ball */
-  | 9
-  /** Poison Ball */
-  | 10
-  /** Any Ball */
-  | 11;
+  | typeof KOC_BALL_OVERRIDE_RANDOM
+  | typeof KOC_BALL_OVERRIDE_BOMB_BALL
+  | typeof KOC_BALL_OVERRIDE_MULTI_BALL
+  | typeof KOC_BALL_OVERRIDE_CAGE_BALL
+  | typeof KOC_BALL_OVERRIDE_MOON_BALL
+  | typeof KOC_BALL_OVERRIDE_SNIPER_BALL
+  | typeof KOC_BALL_OVERRIDE_SODA_BALL
+  | typeof KOC_BALL_OVERRIDE_BOOMERANG_BALL
+  | typeof KOC_BALL_OVERRIDE_POISON_BALL
+  | typeof KOC_BALL_OVERRIDE_ANY_BALL;
+
+export const KOC_MAP_OVERRIDE_RANDOM = -1;
+export const KOC_MAP_OVERRIDE_ROOFTOP_RUMBLE = 2;
+export const KOC_MAP_OVERRIDE_BACK_ALLEY_BRAWL = 3;
+export const KOC_MAP_OVERRIDE_CONCUSSION_YARD = 4;
+export const KOC_MAP_OVERRIDE_GALAXY_BURGER = 5;
+export const KOC_MAP_OVERRIDE_KNOCKOUT_ROUNDABOUT = 6;
+export const KOC_MAP_OVERRIDE_JUKEBOX_JUNCTION = 7;
+export const KOC_MAP_OVERRIDE_HOLLYWOOD_DRIVE_IN = 8;
+export const KOC_MAP_OVERRIDE_LOCKDOWN_THROWDOWN = 9;
+export const KOC_MAP_OVERRIDE_ALIEN_SMASH_SITE = 10;
+export const KOC_MAP_OVERRIDE_SLUDGEWORKS = 11;
+export const KOC_MAP_OVERRIDE_DUALING_DOCKS = 12;
 
 export type KOCMapOverride =
-  /** Random */
-  | -1
-  /** Rooftop Rumble */
-  | 2
-  /** Back Alley Brawl */
-  | 3
-  /** Concussion Yard */
-  | 4
-  /** Galaxy Burger */
-  | 5
-  /** Knockout Roundabout */
-  | 6
-  /** Jukebox Junction */
-  | 7
-  /** Hollywood Drive-In */
-  | 8
-  /** Lockdown Throwdown */
-  | 9
-  /** Alien Smash Site */
-  | 10
-  /** Sludgeworks */
-  | 11
-  /** Dualing Docks */
-  | 12;
+  | typeof KOC_MAP_OVERRIDE_RANDOM
+  | typeof KOC_MAP_OVERRIDE_ROOFTOP_RUMBLE
+  | typeof KOC_MAP_OVERRIDE_BACK_ALLEY_BRAWL
+  | typeof KOC_MAP_OVERRIDE_CONCUSSION_YARD
+  | typeof KOC_MAP_OVERRIDE_GALAXY_BURGER
+  | typeof KOC_MAP_OVERRIDE_KNOCKOUT_ROUNDABOUT
+  | typeof KOC_MAP_OVERRIDE_JUKEBOX_JUNCTION
+  | typeof KOC_MAP_OVERRIDE_HOLLYWOOD_DRIVE_IN
+  | typeof KOC_MAP_OVERRIDE_LOCKDOWN_THROWDOWN
+  | typeof KOC_MAP_OVERRIDE_ALIEN_SMASH_SITE
+  | typeof KOC_MAP_OVERRIDE_SLUDGEWORKS
+  | typeof KOC_MAP_OVERRIDE_DUALING_DOCKS;
 
 export type KOCGameServerConfigureServerEvent = KOCEvent & {
   type: '_game_server_configure';
