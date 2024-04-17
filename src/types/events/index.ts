@@ -82,6 +82,7 @@ export * from './matchmaking/matchmaking_cancel_game_search';
 export * from './matchmaking/matchmaking_status_report';
 export * from './matchmaking/matchmaking_start_game_search';
 export * from './matchmaking/matchmaking_update_game_loadout';
+export * from './matchmaking/matchmaking_user_update_skill';
 
 // News
 export * from './news/news';

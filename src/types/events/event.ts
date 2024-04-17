@@ -132,5 +132,6 @@ export type KOCGameServerEvent =
   | KOCEvents.KOCTeammateDisconnectedGameServerEvent
   // Matchmaking
   | KOCEvents.KOCMatchmakingUpdateGameLoadoutGameServerEvent
+  | KOCEvents.KOCMatchmakingUserUpdateSkillGameServerEvent
   // User
   | KOCEvents.KOCUserConnectTokenStatsGameServerEvent;
