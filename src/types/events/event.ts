@@ -124,6 +124,7 @@ export type KOCGameServerEvent =
   // Crew
   | KOCEvents.KOCCrewsRequestContractUpdateGameServerEvent
   // GameServer
+  | KOCEvents.KOCGameServerRequestedNewPlayerGameServerEvent
   | KOCEvents.KOCGameServerCancelledNewPlayerRequestGameServerEvent
   | KOCEvents.KOCGameServerRegisterGameServerEvent
   | KOCEvents.KOCServerTimeDeltaGameServerEvent

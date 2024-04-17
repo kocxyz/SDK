@@ -60,6 +60,7 @@ export * from './friends/friends_send_request';
 
 // Game Server
 export * from './gameserver/assign_teams';
+export * from './gameserver/game_server_requested_new_player';
 export * from './gameserver/gameserver_cancelled_new_player_request';
 export * from './gameserver/gameserver_configure';
 export * from './gameserver/gameserver_register';
