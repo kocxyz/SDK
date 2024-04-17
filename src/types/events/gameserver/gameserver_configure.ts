@@ -82,5 +82,5 @@ export type KOCGameServerConfigureServerEvent = KOCEvent & {
   multiplay_server_id: number;
 
   switches: Partial<{ [k in KOCServerSwitches]: boolean }>;
-  tunables: Partial<{ [k in KOCServerTunables]: boolean }>;
+  tunables: Partial<{ [k in KOCServerTunables]: number }>;
 };
