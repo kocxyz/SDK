@@ -66,6 +66,7 @@ export * from './gameserver/gameserver_configure';
 export * from './gameserver/gameserver_register';
 export * from './gameserver/server_crew_update';
 export * from './gameserver/server_time_delta';
+export * from './gameserver/teammate_disconnected';
 
 // Group
 export * from './group/group_get';
