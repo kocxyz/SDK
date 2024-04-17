@@ -1,6 +1,6 @@
 import { KOCEvent } from '@/types/events/event';
 
-export type KOCStreetRankUpdateServerEvent = KOCEvent & {
+type KOCStreetRankUpdateEvent = KOCEvent & {
   type: '_street_rank_update';
   update: {
     /**
@@ -10,3 +10,6 @@ export type KOCStreetRankUpdateServerEvent = KOCEvent & {
     [key: `${number}`]: number;
   };
 };
+
+export type KOCStreetRankUpdateServerEvent = KOCStreetRankUpdateEvent;
+export type KOCStreetRankUpdateGameServerEvent = KOCStreetRankUpdateEvent;
