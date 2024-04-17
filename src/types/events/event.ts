@@ -130,5 +130,7 @@ export type KOCGameServerEvent =
   | KOCEvents.KOCGameServerRegisterGameServerEvent
   | KOCEvents.KOCServerTimeDeltaGameServerEvent
   | KOCEvents.KOCTeammateDisconnectedGameServerEvent
+  // Matchmaking
+  | KOCEvents.KOCMatchmakingUpdateGameLoadoutGameServerEvent
   // User
   | KOCEvents.KOCUserConnectTokenStatsGameServerEvent;
