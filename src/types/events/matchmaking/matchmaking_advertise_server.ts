@@ -1,4 +1,4 @@
-import { IPAddress } from '@/types/connection';
+import { IPAddressWithPort } from '@/types/connection';
 import { KOCEvent } from '@/types/events/event';
 import { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
 import { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
@@ -6,7 +6,7 @@ import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
 export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
   type: '_matchmaking_advertise_server';
-  host_address: `${IPAddress}:${number}`;
+  host_address: IPAddressWithPort;
   multiplay_server_id: number;
   multiplay_profile_id: number;
   group_leader: KOCUserId;
@@ -23,7 +23,7 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
    */
   game_server_log: string;
   game_session_guid: UUID4Seg;
-  game_server_match_flow: Extract<KOCServerPlaylistMatchFlow, 2>;
+  game_server_match_flow: KOCServerPlaylistMatchFlow;
   /**
    * The server playlist guid.
    *
@@ -33,7 +33,7 @@ export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
   game_server_playlist_guid: UUID5Seg;
   map_override: KOCMapOverride;
   ball_override: KOCBallOverride;
-  bot_override: false;
+  bot_override: boolean;
   owner: 0;
   /**
    * If its possible to connect as spectator.
