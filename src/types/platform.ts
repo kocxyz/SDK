@@ -1,17 +1,21 @@
 export type Platform =
-  // Win64
+  /** ios | ios-gen2 */
   | 1
-  // Win64 Generation 2
-  | 2
-  // XBox One
+  /** linux */
   | 3
-  // XBox One X
+  /** osx */
   | 4
-  // XBox Scarlett
+  /** meta */
   | 5
-  // PlayStation 4
+  /** ps4 | ps4_pro */
   | 6
-  // PlayStation 5
+  /** win64 | win64-gen2 */
   | 7
-  // Switch
-  | 8;
+  /** switch */
+  | 8
+  /** xbox_one | xbox_one_x */
+  | 9
+  /** xbox_series_x | xbox_scarlett */
+  | 10
+  /** ps5 */
+  | 11;
