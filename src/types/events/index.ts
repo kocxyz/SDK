@@ -27,6 +27,7 @@ export * from './commerce/commerce_redeem_code_response';
 
 // Contract
 export * from './contract/contract_progress_get';
+export * from './contract/contracts_update_progress';
 
 // Crew
 export * from './crew/crew_invites_get';
