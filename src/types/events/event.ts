@@ -40,6 +40,7 @@ export type KOCClientEvent =
   | KOCEvents.KOCGroupKickClientEvent
   | KOCEvents.KOCGroupPromoteLeaderClientEvent
   // Matchmaking
+  | KOCEvents.KOCMatchmakingCancelGameSearchClientEvent
   | KOCEvents.KOCMatchmakingStartGameSearchClientEvent
   // Relay
   | KOCEvents.KOCRelayClientEvent

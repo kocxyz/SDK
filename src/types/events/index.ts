@@ -78,6 +78,7 @@ export * from './group/group_promote_leader';
 
 // Matchmaking
 export * from './matchmaking/matchmaking_advertise_server';
+export * from './matchmaking/matchmaking_cancel_game_search';
 export * from './matchmaking/matchmaking_status_report';
 export * from './matchmaking/matchmaking_start_game_search';
 
