@@ -27,6 +27,7 @@ export type KOCServerSwitches =
   | 'enable_droid_edge_recovery'
   | 'enable_droid_run_from_ultimate_throw'
   | 'enable_replacement_droid'
+  | 'disable_droid_filling_in_quickplay'
   | 'disguise_new_player_droids'
   | 'force_droids_in_ranked_match'
   | 'matchmaking_droid_a_b_test'
