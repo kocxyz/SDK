@@ -16,7 +16,7 @@ export type KOCMatchmakingStartGameSearchClientEvent = KOCEvent & {
    * The Flow of the Match that should be searched
    * for.
    */
-  match_flow: Extract<KOCServerPlaylistMatchFlow, 2>;
+  match_flow: KOCServerPlaylistMatchFlow;
   request_id: number;
   map_override: KOCMapOverride;
   ball_override: KOCBallOverride;
