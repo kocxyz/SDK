@@ -49,6 +49,7 @@ export type KOCClientEvent =
   // User
   | KOCEvents.KOCPersistenceSetUserPairsClientEvent
   | KOCEvents.KOCPersistenceSetUserSettingsClientEvent
+  | KOCEvents.KOCUserAddRecentPlayersClientEvent
   | KOCEvents.KOCUserPingDataClientEvent
   | KOCEvents.KOCUserReportAbuseClientEvent
   | KOCEvents.KOCUserSetPresenceClientEvent

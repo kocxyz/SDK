@@ -116,6 +116,7 @@ export * from './user/persistence_get_user_pairs';
 export * from './user/persistence_set_user_pairs';
 export * from './user/persistence_set_user_settings';
 export * from './user/presence_lookup_get';
+export * from './user/user_add_recent_players';
 export * from './user/user_connect_token_stats';
 export * from './user/user_report_abuse';
 export * from './user/user_set_presence';
