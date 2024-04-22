@@ -94,7 +94,7 @@ export type KOCServerEvent =
   // Matchmaking
   | KOCEvents.KOCMatchmakingAdvertiseServerServerEvent
   | KOCEvents.KOCMatchmakingCanceledServerEvent
-  | KOCEvents.KOCMatchmakingStartGameSearchClientEvent
+  | KOCEvents.KOCMatchmakingStartedSearchServerEvent
   | KOCEvents.KOCMatchmakingStatusReportServerEvent
   // News
   | KOCEvents.KOCNewsServerEvent
