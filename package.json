@@ -1,6 +1,6 @@
 {
   "name": "knockoutcity-sdk",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "description": "A library for interacting with Knockout City Clients and Servers.",
   "author": "Tandashi",
   "homepage": "https://github.com/Tandashi/KnockoutCity-SDK",
