@@ -1,4 +1,6 @@
 export type Platform =
+  /** non platform secific */
+  | 0
   /** ios | ios-gen2 */
   | 1
   /** linux */

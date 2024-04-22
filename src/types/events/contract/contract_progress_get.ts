@@ -1,5 +1,6 @@
 import { KOCEvent } from '@/types/events/event';
 import { UUID4Seg } from '@/types/id';
+import { Platform } from '@/types/platform';
 
 export type KOCContractProgressGetServerEvent = KOCEvent & {
   type: '_get_contract_progress';
@@ -15,5 +16,11 @@ type KOCContract = {
   is_last_page: boolean;
   progress_written: boolean;
 };
-
-type KOCContractProgress = [number, number, number, number];
+export type KOCContractState = 
+  /** In Progress */
+  | 1 
+  /** Completed */
+  | 2 
+  /** Rewards awarded */
+  | 3
+type KOCContractProgress = [state: KOCContractState, value: number, stage: number, platform: Platform];
