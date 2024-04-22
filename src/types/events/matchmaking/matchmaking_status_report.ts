@@ -2,6 +2,10 @@ import { KOCEvent } from '@/types/events/event';
 
 export type MatchmakingStatus =
   /**
+   * Matchmaking Cancelled
+   */
+  | 1
+  /**
    * Searching for a match
    */
   | 2
