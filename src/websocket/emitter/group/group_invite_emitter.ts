@@ -16,12 +16,12 @@ export const emitGroupInvite: KOCClientEmitter<EmitterGroupInviteParameters> = (
       sender_id: {
         velan: params.senderId,
       },
+      sender_first_party_id: { ea: 1 },
+      // Always allow crossplay since its doesn't matter.
+      // Private Servers are PC only anyways.
+      sender_crossplay_allowed: true,
+      sender_platform_kind: 7,
+      // As far as I know it will never be displayed anywhere.
+      message: '',
     },
-    sender_first_party_id: { ea: 1 },
-    // Always allow crossplay since its doesn't matter.
-    // Private Servers are PC only anyways.
-    sender_crossplay_allowed: true,
-    sender_platform_kind: 7,
-    // As far as I know it will never be displayed anywhere.
-    message: '',
   });

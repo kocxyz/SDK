@@ -14,13 +14,13 @@ export type KOCRelayGroupInvite = KOCEvent & {
      * The user Id of the sender
      */
     sender_id: KOCUserId;
+    sender_first_party_id: { ea: number };
+    sender_crossplay_allowed: boolean;
+    sender_platform_kind: Platform;
+    /**
+     * The message of the group invite.
+     * As far as known now it will never be displayed.
+     */
+    message: string;
   };
-  sender_first_party_id: { ea: number };
-  sender_crossplay_allowed: boolean;
-  sender_platform_kind: Platform;
-  /**
-   * The message of the group invite.
-   * As far as known now it will never be displayed.
-   */
-  message: string;
 };
