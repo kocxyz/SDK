@@ -9,6 +9,7 @@ import { KOCEvent } from '@/types/events/event';
  * 1.150#0: Login Denied (e.g. banned or maintenance)
  * 1.154#0: Content updates are available. Please sign in again for the most up-to-date experience.
  * 1.155#0: Version mismatch
+ * 10.229#0: Matchmaking not available for user due to Cooldown 
  */
 
 /**
@@ -58,7 +59,9 @@ export type ErrorCode =
   // Version mismatch | Either you or the player you are trying to join doesn't have the most recent version of Knockout City. Please ensure you both have updated the game and try again.
   | 155
   // Are you there? | You have been signed out due to inactivty. Sign back in to continue playing.
-  | 170;
+  | 170
+  // Matchmaking | Matchmaking not available for user due to Cooldown
+  | 229;
 
 export type ErrorAction =
   // Small banner at the top left of the screen with the error codes
