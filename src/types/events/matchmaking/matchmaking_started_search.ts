@@ -1,4 +1,4 @@
-import { UUID5Seg, KOCEvent, KOCBallOverride, KOCMapOverride, KOCServerPlaylistMatchFlow } from '@/types';
+import { UUID5Seg, KOCEvent, KOCBallOverride, KOCMapOverride, KOCServerPlaylistMatchFlow, KOCUserId, KOCUserIdNone } from '@/types';
 
 export type KOCMatchmakingStartedSearchServerEvent = KOCEvent & {
   type: '_matchmaking_started_search';
@@ -7,8 +7,6 @@ export type KOCMatchmakingStartedSearchServerEvent = KOCEvent & {
   map_override: KOCMapOverride;
   ball_override: KOCBallOverride;
   bot_override: boolean;
-  owner: {
-    invalid: 0;
-  };
+  owner: KOCUserId | KOCUserIdNone;
   request_id: number;
 };

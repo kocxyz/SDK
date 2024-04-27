@@ -1,6 +1,6 @@
 import { KOCEvent } from '@/types/events/event';
 import { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
-import { UUID5Seg } from '@/types/id';
+import { KOCUserId, KOCUserIdNone, UUID5Seg } from '@/types/id';
 import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
 export type KOCMatchmakingStartGameSearchClientEvent = KOCEvent & {
@@ -21,8 +21,6 @@ export type KOCMatchmakingStartGameSearchClientEvent = KOCEvent & {
   map_override: KOCMapOverride;
   ball_override: KOCBallOverride;
   bot_override: boolean;
-  owner: {
-    invalid: 0;
-  };
+  owner: KOCUserId | KOCUserIdNone;
   content_update_version: '';
 };
