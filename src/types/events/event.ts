@@ -139,5 +139,6 @@ export type KOCGameServerEvent =
   // Street Rank
   | KOCEvents.KOCStreetRankUpdateGameServerEvent
   // User
+  | KOCEvents.KOCGiveUserQuittersMarksGameServerEvent
   | KOCEvents.KOCPersistenceSetUserPairsGameServerEvent
   | KOCEvents.KOCUserConnectTokenStatsGameServerEvent;

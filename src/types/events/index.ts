@@ -114,6 +114,7 @@ export * from './reporting/report_submission_result';
 export * from './street_rank/street_rank_update';
 
 // User
+export * from './user/give_user_quitters_marks';
 export * from './user/persistence_get_user_pairs';
 export * from './user/persistence_set_user_pairs';
 export * from './user/persistence_set_user_settings';
