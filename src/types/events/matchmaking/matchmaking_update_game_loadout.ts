@@ -7,7 +7,8 @@ type KOCMapDef =
   | 'construction_6ball.map_def'
   | 'rooftops_standard.map_def'
   | 'holowood_standard.map_def'
-  | 'sludge_standard.map_def';
+  | 'sludge_standard.map_def'
+  | 'trainstation_standard.map_def';
 type KOCMatchRule = 'dm_2t1_bo3_notimelimit.match_rules' | 'dm_2t3_bo3_5m_ot.match_rules';
 type KOCBallLoadout =
   | 's08_basic_5_all_2.ball_loadout'
@@ -18,7 +19,9 @@ type KOCBallLoadout =
   | 'basic_5_soda_2.ball_loadout'
   | 'basic-5.ball_loadout'
   | 'basic_4_sniper_2.ball_loadout'
-  | 'basic_3_bomb_2.ball_loadout';
+  | 'basic_4_snare_2.ball_loadout'
+  | 'basic_3_bomb_2.ball_loadout'
+  | 'basic_2_poison_2.ball_loadout';
 
 export type KOCMatchmakingUpdateGameLoadoutGameServerEvent = KOCEvent & {
   type: '_matchmaking_update_game_loadout';
