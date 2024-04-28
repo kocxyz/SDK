@@ -5,12 +5,18 @@ export type KOCContractsUpdateProgressGameServerEvent = KOCEvent & {
   contracts: KOCContractProgressUpdate[];
 };
 
-type KOCContractProgressUpdate = {
+export type KOCContractProgressUpdate = {
   user_id: KOCUserId;
   contract_guid: UUID5Seg;
   contract_stage: number;
   contract_platform: Platform;
   progress_increase: number;
-  write_state: 2;
+  write_state: KOCContractWriteState;
   debug_progress: boolean;
 };
+
+export type KOCContractWriteState =
+  /** Update */
+  | 1
+  /** Create */
+  | 2;
