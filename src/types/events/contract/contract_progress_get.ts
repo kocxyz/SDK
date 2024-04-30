@@ -21,6 +21,8 @@ export type KOCContractState =
   | 1
   /** Completed */
   | 2
-  /** Rewards awarded */
-  | 3;
+  /** Stage rewarded (has to be used for multi stage contracts, else the game fill freeze) */
+  | 3
+  /** All Stages rewarded (mostly used for single stage contracts) */
+  | 5;
 export type KOCContractProgress = [state: KOCContractState, value: number, stage: number, platform: Platform];
