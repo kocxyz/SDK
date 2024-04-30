@@ -24,6 +24,7 @@ export * from './commerce/commerce_purchase';
 export * from './commerce/commerce_purchase_result';
 export * from './commerce/commerce_redeem_code';
 export * from './commerce/commerce_redeem_code_response';
+export * from './commerce/commerce_set_consumables';
 
 // Contract
 export * from './contract/contract_progress_get';

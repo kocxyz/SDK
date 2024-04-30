@@ -123,6 +123,8 @@ export type KOCServerEvent =
   | KOCEvents.KOCWelcomeServerEvent;
 
 export type KOCGameServerEvent =
+  // Commerce
+  | KOCEvents.KOCCommerceSetConsumablesGameServerEvent
   // Contact
   | KOCEvents.KOCContractsUpdateProgressGameServerEvent
   // Crew
