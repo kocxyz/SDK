@@ -97,6 +97,7 @@ export type KOCServerEvent =
   | KOCEvents.KOCMatchmakingStartedSearchServerEvent
   | KOCEvents.KOCMatchmakingStatusReportServerEvent
   | KOCEvents.KOCSkillUpdateServerEvent
+  | KOCEvents.KOCSkillUpdateReceivedServerEvent
   // News
   | KOCEvents.KOCNewsServerEvent
   // Penalty
