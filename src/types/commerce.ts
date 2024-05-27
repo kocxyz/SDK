@@ -51,12 +51,23 @@ export type KOCCommerceInventoryEquipmentTypes =
   | 'k_accessory_type_style_makeup_color'
   | 'k_accessory_type_style_outfit';
 
+export type KOCCommerceItemType =
+  | 'k_accessory_type_none'
+  | KOCCommerceInventoryEquipmentTypes
+  | KOCCommerceCrewInventoryEquipmentTypes
+  | 'k_accessory_type_consumable_xp_boost'
+  | 'k_accessory_type_consumable_energy_drink'
+  | 'k_accessory_type_consumable_extra_character_slot'
+  | 'k_accessory_type_trophy'
+  | 'k_accessory_type_jukebox_track';
+
 export type KOCCommerceCrewInventoryEquipment = {
   [key in `0.${KOCCommerceCrewInventoryEquipmentTypes}`]: UUID4Seg;
 };
 
 export type KOCCommerceCrewInventoryEquipmentTypes =
-  | 'k_accessory_type_crew_logo_front'
   | 'k_accessory_type_crew_banner'
   | 'k_accessory_type_crew_horn'
+  | 'k_accessory_type_crew_logo_front'
+  | 'k_accessory_type_crew_logo_back'
   | 'k_accessory_type_crew_vehicle';
