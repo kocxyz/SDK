@@ -7,5 +7,5 @@ export type KOCCommerceRandomDurablesGrantedServerEvent = KOCEvent & {
   type: '_commerce_random_durables_granted';
   user_id: KOCUserId;
   durables: UUID4Seg[];
-  consumables: UUID4Seg[];
+  consumables: { [key: UUID4Seg]: number }[];
 };
