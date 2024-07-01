@@ -25,8 +25,8 @@ export type KOCWelcomeServerEvent = KOCEvent & {
    * The tunables configuration of the server
    */
   tunables: {
-    [key in KOCServerTunables]?: number;
-  };
+    [key in Exclude<KOCServerTunables, 'client_display_crossplay_enable_popup'>]?: number;
+  } & { client_display_crossplay_enable_popup?: boolean };
   /**
    * The cohorts of the server
    */

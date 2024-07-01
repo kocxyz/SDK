@@ -13,6 +13,7 @@ export type KOCServerTunables =
   // Client
   | 'client_reconnect_interval_ms'
   | 'client_reconnect_attempt_limit'
+  | 'client_display_crossplay_enable_popup'
 
   // Commerce
   | 'periodic_upsell_rate_for_1st_visit_seconds'
