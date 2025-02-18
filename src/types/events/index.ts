@@ -138,5 +138,8 @@ export * from './error';
 // Welcome
 export * from './welcome';
 
+// Script Event
+export * from './script_event';
+
 // Event Generic
 export * from './event';

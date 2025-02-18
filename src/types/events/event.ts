@@ -123,7 +123,9 @@ export type KOCServerEvent =
   // Error
   | KOCEvents.KOCErrorServerEvent
   // Welcome
-  | KOCEvents.KOCWelcomeServerEvent;
+  | KOCEvents.KOCWelcomeServerEvent
+  // Script Event
+  | KOCEvents.KOCScriptEventServerEvent;
 
 export type KOCGameServerEvent =
   // Commerce
