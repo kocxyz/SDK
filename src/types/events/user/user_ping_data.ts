@@ -1,5 +1,5 @@
-import { IPAddress } from '@/types/connection';
-import { KOCEvent } from '@/types/events/event';
+import type { IPAddress } from '@/types/connection';
+import type { KOCEvent } from '@/types/events/event';
 
 export type KOCUserPingDataRegion = {
   id: string;

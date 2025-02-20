@@ -1,9 +1,9 @@
 import * as crypto from 'node:crypto';
-import { client as WebsocketClient, connection as Connection } from 'websocket';
+import { type connection as Connection, client as WebsocketClient } from 'websocket';
 
 import type { KOCClientEvent, KOCServerEvent, KOCWebsocketServerUrl, UUID5Seg } from '@/types';
-import { KOCWebsocketWrapper } from '@/websocket/wrapper';
 import { adapterWebsocket } from '@/websocket/adapters';
+import { KOCWebsocketWrapper } from '@/websocket/wrapper';
 
 export class KOCWebsocketClient extends KOCWebsocketWrapper<KOCServerEvent, KOCClientEvent> {
   /**
@@ -61,12 +61,16 @@ export class KOCWebsocketClient extends KOCWebsocketWrapper<KOCServerEvent, KOCC
     }
 
     return new Promise((resolve) => {
-      this.wsConnection!.on('close', () => {
+      if (!this.wsConnection) {
+        throw Error('No longer connected, connect first.');
+      }
+
+      this.wsConnection.on('close', () => {
         this.wsConnection = undefined;
         resolve();
       });
 
-      this.wsConnection!.close();
+      this.wsConnection.close();
     });
   }
 

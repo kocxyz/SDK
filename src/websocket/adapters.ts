@@ -1,5 +1,5 @@
-import { type connection as WebSocketConnection } from 'websocket';
-import { type Connection as WrapperConnection } from '@/websocket/wrapper';
+import type { Connection as WrapperConnection } from '@/websocket/wrapper';
+import type { connection as WebSocketConnection } from 'websocket';
 
 export const adapterWebsocket = (connection: WebSocketConnection): WrapperConnection => {
   return {

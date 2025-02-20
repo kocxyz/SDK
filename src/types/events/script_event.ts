@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types';
+import type { KOCEvent } from '@/types';
 
 export type KOCScriptEventServerEvent = KOCEvent & {
   type: '_script_event';

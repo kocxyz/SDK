@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types/events/event';
+import type { KOCEvent } from '@/types/events/event';
 
 /**
  * An event that notifies when a group

@@ -1,8 +1,8 @@
-import { KOCEvent } from '@/types/events/event';
-import { UUID5Seg } from '@/types/id';
-import { KOCGameServerPlaylist, KOCServerPlaylistMatchFlow } from '@/types/playlist';
-import { KOCServerSwitches } from '@/types/switches';
-import { KOCServerTunables } from '@/types/tunables';
+import type { KOCEvent } from '@/types/events/event';
+import type { UUID5Seg } from '@/types/id';
+import type { KOCGameServerPlaylist, KOCServerPlaylistMatchFlow } from '@/types/playlist';
+import type { KOCServerSwitches } from '@/types/switches';
+import type { KOCServerTunables } from '@/types/tunables';
 
 export const KOC_BALL_OVERRIDE_RANDOM = -1;
 export const KOC_BALL_OVERRIDE_BOMB_BALL = 2;

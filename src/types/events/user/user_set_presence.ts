@@ -1,5 +1,5 @@
-import { KOCEvent } from '@/types/events/event';
-import { UserPresenceState, UserRichPresenceState } from '@/types/user';
+import type { KOCEvent } from '@/types/events/event';
+import type { UserPresenceState, UserRichPresenceState } from '@/types/user';
 
 export type KOCUserSetPresenceClientEvent = KOCEvent & {
   type: '_user_set_presence';

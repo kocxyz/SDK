@@ -1,6 +1,6 @@
-import { KOCCrew } from '@/types/crew';
-import { KOCEvent } from '@/types/events/event';
-import { KOCUserId } from '@/types/id';
+import type { KOCCrew } from '@/types/crew';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCUserId } from '@/types/id';
 
 export type KOCServerCrewUpdateServerEvent = KOCEvent & {
   type: '_server_crew_update';

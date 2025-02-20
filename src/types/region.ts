@@ -1,5 +1,5 @@
-import { UUID5Seg } from '@/types/id';
-import { IPAddress } from './connection';
+import type { UUID5Seg } from '@/types/id';
+import type { IPAddress } from './connection';
 
 export type KOCServerRegion = {
   region_id: UUID5Seg;

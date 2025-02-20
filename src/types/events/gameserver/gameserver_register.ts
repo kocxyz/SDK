@@ -1,6 +1,6 @@
-import { IPAddressWithPort } from '@/types/connection';
-import { KOCEvent } from '@/types/events/event';
-import { UUID5Seg } from '@/types/id';
+import type { IPAddressWithPort } from '@/types/connection';
+import type { KOCEvent } from '@/types/events/event';
+import type { UUID5Seg } from '@/types/id';
 
 export type KOCGameServerRegisterGameServerEvent = KOCEvent & {
   type: '_game_server_register';

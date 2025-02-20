@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types/events/event';
+import type { KOCEvent } from '@/types/events/event';
 
 export type KOCSetPenaltyDurationIfQuitServerEvent = KOCEvent & {
   type: '_set_penalty_duration_if_quit';

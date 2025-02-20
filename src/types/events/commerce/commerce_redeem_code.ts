@@ -1,4 +1,4 @@
-import { KOCEvent } from "@/types/events/event";
+import type { KOCEvent } from '@/types/events/event';
 
 /**
  * Must be 20 characters long and contain only letters and numbers.

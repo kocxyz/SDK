@@ -1,5 +1,5 @@
-import { KOCEvent } from '@/types/events/event';
-import { UUID4Seg } from '@/types/id';
+import type { KOCEvent } from '@/types/events/event';
+import type { UUID4Seg } from '@/types/id';
 
 /**
  * An event can be emitted to purchase an item.

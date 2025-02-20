@@ -1,6 +1,6 @@
-import { KOCEvent } from '@/types/events/event';
-import { KOCUserId } from '@/types/id';
-import { Platform } from '@/types/platform';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCUserId } from '@/types/id';
+import type { Platform } from '@/types/platform';
 
 export type KOCRelayGroupInvite = KOCEvent & {
   type: '_relay';

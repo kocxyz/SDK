@@ -1,4 +1,4 @@
-import { UUID4Seg } from '@/types/id';
+import type { UUID4Seg } from '@/types/id';
 
 /**
  * The different equiped items for all the accounts characters.

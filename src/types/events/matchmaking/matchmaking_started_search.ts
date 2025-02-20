@@ -1,4 +1,12 @@
-import { UUID5Seg, KOCEvent, KOCBallOverride, KOCMapOverride, KOCServerPlaylistMatchFlow, KOCUserId, KOCUserIdNone } from '@/types';
+import type {
+  KOCBallOverride,
+  KOCEvent,
+  KOCMapOverride,
+  KOCServerPlaylistMatchFlow,
+  KOCUserId,
+  KOCUserIdNone,
+  UUID5Seg,
+} from '@/types';
 
 export type KOCMatchmakingStartedSearchServerEvent = KOCEvent & {
   type: '_matchmaking_started_search';

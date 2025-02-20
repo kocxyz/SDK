@@ -1,5 +1,5 @@
-import { KOCUserSettings } from '@/types';
-import { KOCClientEmitter } from '@/websocket/emitter/emitter';
+import type { KOCUserSettings } from '@/types';
+import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterUserPersistenceSetSettingsParameters = {
   settings: Partial<KOCUserSettings>;

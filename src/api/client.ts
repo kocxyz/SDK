@@ -1,5 +1,5 @@
 import type { KOCAPIServerUrl } from '@/types';
-import axios, { AxiosResponse } from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 
 export class APIClient {
   /**

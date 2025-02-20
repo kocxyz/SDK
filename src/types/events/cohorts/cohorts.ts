@@ -1,5 +1,5 @@
-import { KOCCohorts } from '@/types/cohorts';
-import { KOCEvent } from '@/types/events/event';
+import type { KOCCohorts } from '@/types/cohorts';
+import type { KOCEvent } from '@/types/events/event';
 
 export type KOCCohortsServerEvent = KOCEvent & {
   type: '_cohorts';

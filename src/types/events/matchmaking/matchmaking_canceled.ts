@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types/events/event';
+import type { KOCEvent } from '@/types/events/event';
 
 export type KOCMatchmakingCanceledServerEvent = KOCEvent & {
   type: '_matchmaking_canceled';

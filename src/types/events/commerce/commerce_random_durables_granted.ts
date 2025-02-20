@@ -1,4 +1,4 @@
-import { KOCEvent, KOCUserId, UUID4Seg } from '@/types';
+import type { KOCEvent, KOCUserId, UUID4Seg } from '@/types';
 
 /**
  * An event can be emitted to redeem a code.

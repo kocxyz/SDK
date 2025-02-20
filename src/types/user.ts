@@ -1,7 +1,7 @@
-import { KOCCrew } from '@/types/crew';
-import { KOCGroupSize, KOCGroupVisibility } from '@/types/group';
-import { KOCUserId, UUID5Seg } from '@/types/id';
-import { Platform } from '@/types/platform';
+import type { KOCCrew } from '@/types/crew';
+import type { KOCGroupSize, KOCGroupVisibility } from '@/types/group';
+import type { KOCUserId, UUID5Seg } from '@/types/id';
+import type { Platform } from '@/types/platform';
 
 export type UserPresenceState =
   // Appear Offline

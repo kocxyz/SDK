@@ -1,5 +1,5 @@
-import { KOCEvent } from '@/types';
-import { EventEmitter, EventUnsubscribe } from '@/websocket/event_emitter';
+import type { KOCEvent } from '@/types';
+import { EventEmitter, type EventUnsubscribe } from '@/websocket/event_emitter';
 
 export type Connection = {
   onMessage: (callback: (data: string) => void) => void;
@@ -66,6 +66,7 @@ export class KOCWebsocketWrapper<ReceiveEvents extends KOCEvent, EmitEvents exte
         return;
       }
 
+      // biome-ignore lint/suspicious/noExplicitAny: Fix this at a later time.
       (this.emitter.emit as any)(message.type, message);
     });
   }
@@ -123,7 +124,7 @@ export class KOCWebsocketWrapper<ReceiveEvents extends KOCEvent, EmitEvents exte
     event: Event,
     callback: EmitterEvents<ReceiveEvents>[Event],
   ): EventUnsubscribe {
-    const unbind = this.emitter.on(event, (data: any) => {
+    const unbind = this.emitter.on(event, (data) => {
       unbind();
       callback(data);
     });

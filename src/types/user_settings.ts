@@ -1,4 +1,4 @@
-import { UUID4Seg } from './id';
+import type { UUID4Seg } from './id';
 
 // https://stackoverflow.com/a/70307091
 type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N

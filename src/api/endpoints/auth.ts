@@ -1,9 +1,9 @@
 import * as crypto from 'node:crypto';
+import type { APIClient } from '@/api/client';
 import type { KOCPersonaId, KOCUserId, UUID5Seg } from '@/types';
-import { APIClient } from '@/api/client';
 import { fast1a64 } from 'fnv-plus';
 
-export const generateSecret = (secret: string): number => parseInt(fast1a64(secret) as unknown as string, 16);
+export const generateSecret = (secret: string): number => Number.parseInt(fast1a64(secret) as unknown as string, 16);
 
 export type User = {
   id: KOCUserId;

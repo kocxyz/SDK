@@ -1,5 +1,5 @@
-import { KOCEvent } from '@/types/events/event';
-import { KOCUserId } from '@/types/id';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCUserId } from '@/types/id';
 
 /**
  * An event that is used to block a player.

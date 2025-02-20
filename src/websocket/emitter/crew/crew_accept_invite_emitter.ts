@@ -1,5 +1,5 @@
-import { UUID5Seg } from '@/types';
-import { KOCClientEmitter } from '@/websocket/emitter/emitter';
+import type { UUID5Seg } from '@/types';
+import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewAcceptInviteParameters = {
   userId: number;

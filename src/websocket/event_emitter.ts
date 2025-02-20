@@ -1,10 +1,9 @@
 type EventsMap = {
+  // biome-ignore lint/suspicious/noExplicitAny: Fix this at a later time.
   [event: string]: (...args: any[]) => void;
 };
 
-export type EventUnsubscribe = {
-  (): void;
-};
+export type EventUnsubscribe = () => void;
 
 export class EventEmitter<Events extends EventsMap> {
   private events: Partial<{ [E in keyof Events]: Events[E][] }> = {};
@@ -38,10 +37,9 @@ export class EventEmitter<Events extends EventsMap> {
    */
   public on<K extends keyof Events>(event: K, callback: Events[K]): EventUnsubscribe {
     if (this.events[event] === undefined) {
-      this.events[event] = [callback];
-    } else {
-      this.events[event]!.push(callback);
+      this.events[event] = [];
     }
+    this.events[event].push(callback);
 
     return () => {
       this.events[event] = this.events[event]?.filter((index) => callback !== index);
@@ -56,8 +54,8 @@ export class EventEmitter<Events extends EventsMap> {
    */
   public emit<K extends keyof Events>(event: K, ...args: Parameters<Events[K]>): void {
     const callbacks = this.events[event] ?? [this.fallback];
-    callbacks.forEach((callback) => {
+    for (const callback of callbacks) {
       callback(...args);
-    });
+    }
   }
 }

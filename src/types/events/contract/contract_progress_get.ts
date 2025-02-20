@@ -1,6 +1,6 @@
-import { KOCEvent } from '@/types/events/event';
-import { UUID4Seg } from '@/types/id';
-import { Platform } from '@/types/platform';
+import type { KOCEvent } from '@/types/events/event';
+import type { UUID4Seg } from '@/types/id';
+import type { Platform } from '@/types/platform';
 
 export type KOCContractProgressGetServerEvent = KOCEvent & {
   type: '_get_contract_progress';

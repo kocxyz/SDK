@@ -1,5 +1,5 @@
-import { KOCClientEmitter } from '@/websocket/emitter/emitter';
-import { KOCServerPlaylistMatchFlow, UUID5Seg } from '@/types';
+import type { KOCServerPlaylistMatchFlow, UUID5Seg } from '@/types';
+import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterMatchmakingStartGameSearchParameters = {
   /**

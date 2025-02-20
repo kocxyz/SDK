@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types/events/event';
+import type { KOCEvent } from '@/types/events/event';
 
 /**
  * A list of common errors that can occur in Knockout City.
@@ -9,7 +9,7 @@ import { KOCEvent } from '@/types/events/event';
  * 1.150#0: Login Denied (e.g. banned or maintenance)
  * 1.154#0: Content updates are available. Please sign in again for the most up-to-date experience.
  * 1.155#0: Version mismatch
- * 10.229#0: Matchmaking not available for user due to Cooldown 
+ * 10.229#0: Matchmaking not available for user due to Cooldown
  */
 
 /**

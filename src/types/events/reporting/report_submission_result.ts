@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types/events/event';
+import type { KOCEvent } from '@/types/events/event';
 
 export type KOCReportSubmissionResultServerEvent = KOCEvent & {
   type: '_report_submission_result';

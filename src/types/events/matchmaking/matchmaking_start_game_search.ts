@@ -1,7 +1,7 @@
-import { KOCEvent } from '@/types/events/event';
-import { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
-import { KOCUserId, KOCUserIdNone, UUID5Seg } from '@/types/id';
-import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
+import type { KOCUserId, KOCUserIdNone, UUID5Seg } from '@/types/id';
+import type { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
 export type KOCMatchmakingStartGameSearchClientEvent = KOCEvent & {
   type: '_matchmaking_start_game_search';

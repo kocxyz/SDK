@@ -1,4 +1,4 @@
-import { KOCEvent } from '@/types';
+import type { KOCEvent } from '@/types';
 
 type KOCMapDef =
   | 'spindiner_standard.map_def'

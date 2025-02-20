@@ -1,4 +1,4 @@
-import { KOCEvent, KOCUserId, KOCServerPlaylistMatchFlow } from '@/types';
+import type { KOCEvent, KOCServerPlaylistMatchFlow, KOCUserId } from '@/types';
 
 export type KOCGiveUserQuittersMarksGameServerEvent = KOCEvent & {
   type: '_give_user_quitters_marks';

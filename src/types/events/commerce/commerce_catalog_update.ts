@@ -1,6 +1,6 @@
-import { KOCCommerceCurrency } from '@/types/currencies';
-import { KOCEvent } from '@/types/events/event';
-import { UUID4Seg } from '@/types/id';
+import type { KOCCommerceCurrency } from '@/types/currencies';
+import type { KOCEvent } from '@/types/events/event';
+import type { UUID4Seg } from '@/types/id';
 
 export type KOCCommerceCatalogUpdateServerEvent = KOCEvent & {
   type: '_commerce_catalog_update';

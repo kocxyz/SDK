@@ -1,5 +1,5 @@
 import type { KOCCommerceRedeemCode } from '@/types';
-import { KOCClientEmitter } from '@/websocket/emitter/emitter';
+import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCommerceRedeemCodeParameters = {
   code: KOCCommerceRedeemCode;

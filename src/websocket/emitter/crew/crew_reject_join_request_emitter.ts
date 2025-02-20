@@ -1,4 +1,4 @@
-import { KOCClientEmitter } from '@/websocket/emitter/emitter';
+import type { KOCClientEmitter } from '@/websocket/emitter/emitter';
 
 type EmitterCrewRejectJoinRequestParameters = {
   userId: number;

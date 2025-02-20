@@ -1,8 +1,8 @@
-import { IPAddressWithPort } from '@/types/connection';
-import { KOCEvent } from '@/types/events/event';
-import { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
-import { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
-import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
+import type { IPAddressWithPort } from '@/types/connection';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCBallOverride, KOCMapOverride } from '@/types/events/gameserver/gameserver_configure';
+import type { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
+import type { KOCServerPlaylistMatchFlow } from '@/types/playlist';
 
 export type KOCMatchmakingAdvertiseServerServerEvent = KOCEvent & {
   type: '_matchmaking_advertise_server';

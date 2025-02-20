@@ -1,6 +1,6 @@
-import { KOCCommerceCrewInventoryEquipment, KOCCommerceInventoryEquipment } from '@/types/commerce';
-import { KOCEvent } from '@/types/events/event';
-import { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
+import type { KOCCommerceCrewInventoryEquipment, KOCCommerceInventoryEquipment } from '@/types/commerce';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCUserId, UUID4Seg, UUID5Seg } from '@/types/id';
 
 export type KOCCommerceInventoryUpdateUsersServerEvent = KOCEvent & {
   type: '_commerce_inventory_update_users';

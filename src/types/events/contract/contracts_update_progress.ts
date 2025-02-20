@@ -1,4 +1,4 @@
-import { KOCEvent, KOCUserId, UUID5Seg, Platform } from '@/types';
+import type { KOCEvent, KOCUserId, Platform, UUID5Seg } from '@/types';
 
 export type KOCContractsUpdateProgressGameServerEvent = KOCEvent & {
   type: '_contracts_update_progress';

@@ -1,8 +1,8 @@
-import { KOCEvent } from '@/types/events/event';
-import { KOCGroupSize } from '@/types/group';
-import { KOCUserId, UUID5Seg } from '@/types/id';
-import { KOCServerPlaylistMatchFlow } from '@/types/playlist';
-import { KOCUserSkill } from '@/types/user';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCGroupSize } from '@/types/group';
+import type { KOCUserId, UUID5Seg } from '@/types/id';
+import type { KOCServerPlaylistMatchFlow } from '@/types/playlist';
+import type { KOCUserSkill } from '@/types/user';
 
 export type TeamUser = {
   user_id: KOCUserId;

@@ -1,5 +1,5 @@
-import { UUID5Seg } from '@/types/id';
-import { KOCUserSkill } from '@/types/user';
+import type { UUID5Seg } from '@/types/id';
+import type { KOCUserSkill } from '@/types/user';
 
 export const KOC_PLAYLIST_MATCH_FLOW_INVALID = -1;
 export const KOC_PLAYLIST_MATCH_FLOW_PRIVATE_MATCH = 0;

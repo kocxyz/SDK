@@ -1,7 +1,7 @@
-import { KOCCrew } from '@/types/crew';
-import { KOCEvent } from '@/types/events/event';
-import { KOCUserId } from '@/types/id';
-import { KOCBaseUser } from '@/types/user';
+import type { KOCCrew } from '@/types/crew';
+import type { KOCEvent } from '@/types/events/event';
+import type { KOCUserId } from '@/types/id';
+import type { KOCBaseUser } from '@/types/user';
 
 /**
  * Contains the search result of the

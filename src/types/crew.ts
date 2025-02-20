@@ -1,4 +1,4 @@
-import { KOCUserId, UUID5Seg } from '@/types/id';
+import type { KOCUserId, UUID5Seg } from '@/types/id';
 
 export type KOCCrew = {
   /**

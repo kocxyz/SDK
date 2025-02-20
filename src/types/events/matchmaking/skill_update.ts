@@ -1,4 +1,4 @@
-import { KOCEvent, UUID5Seg, KOCServerPlaylistMatchFlow } from '@/types';
+import type { KOCEvent, KOCServerPlaylistMatchFlow, UUID5Seg } from '@/types';
 
 export type KOCSkillUpdateServerEvent = KOCEvent & {
   type: '_skill_update';

@@ -1,5 +1,5 @@
-import { KOCEvent } from '@/types/events/event';
-import { UUID5Seg } from '@/types/id';
+import type { KOCEvent } from '@/types/events/event';
+import type { UUID5Seg } from '@/types/id';
 
 export type KOCCrewsReportNameClientEvent = KOCEvent & {
   type: '_crews_report_name';
