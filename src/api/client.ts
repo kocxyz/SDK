@@ -1,7 +1,7 @@
-import type { KOCAPIServerUrl } from '@/types';
-import axios, { type AxiosResponse } from 'axios';
+import type { KOCAPIServerUrl } from "@/types";
+import axios, { type AxiosResponse } from "axios";
 
-export class APIClient {
+export class KOCAPIClient {
   /**
    * Contains the KOCServer address
    */
@@ -16,13 +16,18 @@ export class APIClient {
     this.backendJWT = backendJWT;
   }
 
-  public async post<Response, Data extends Record<string, unknown> = Record<string, unknown>>(
+  public async post<
+    Response,
+    Data extends Record<string, unknown> = Record<string, unknown>,
+  >(
     url: string,
     data: Data,
   ): Promise<AxiosResponse<Response>> {
     return axios.post<Response>(`${this.address}${url}`, data, {
       headers: {
-        Authorization: `Bearer ${this.backendJWT}`,
+        Authorization: this.backendJWT
+          ? `Bearer ${this.backendJWT}`
+          : undefined,
       },
     });
   }

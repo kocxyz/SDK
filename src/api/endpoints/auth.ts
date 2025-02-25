@@ -1,13 +1,14 @@
-import * as crypto from 'node:crypto';
-import type { APIClient } from '@/api/client';
-import type { KOCPersonaId, KOCUserId, UUID5Seg } from '@/types';
-import { fast1a64 } from 'fnv-plus';
+import * as crypto from "node:crypto";
+import type { KOCAPIClient } from "@/api/client";
+import type { KOCPersonaId, KOCUserId, UUID5Seg } from "@/types";
+import { fast1a64 } from "fnv-plus";
 
-export const generateSecret = (secret: string): number => Number.parseInt(fast1a64(secret) as unknown as string, 16);
+export const generateSecret = (secret: string): number =>
+  Number.parseInt(fast1a64(secret) as unknown as string, 16);
 
 export type User = {
   id: KOCUserId;
-  auth_provider: 'dev';
+  auth_provider: "dev";
   username: string;
   publisher_username: string;
   publisher_username_code: number;
@@ -18,7 +19,7 @@ export type User = {
 export type AuthenticateResponse = {
   user: User;
   token: string;
-  country: 'US';
+  country: "US";
 };
 
 export type AuthenticationRequest = {
@@ -47,24 +48,31 @@ export type AuthenticationRequest = {
  *
  * @returns
  */
-export const authenticate = (client: APIClient, username: string, secret?: string): Promise<AuthenticateResponse> => {
+export const authenticate = (
+  client: KOCAPIClient,
+  username: string,
+  secret?: string,
+): Promise<AuthenticateResponse> => {
   const systemGuid = crypto.randomUUID();
   const bootSessionGuid = crypto.randomUUID();
 
   return client
-    .post<AuthenticateResponse>('/api/auth', {
-      credentials: {
-        username: username,
-        secret: secret !== undefined ? generateSecret(secret) : undefined,
-        platform: 'win64',
-        pid: 0,
-        system_guid: systemGuid,
-        version: 269701,
-        build: 'final',
-        boot_session_guid: bootSessionGuid,
-        is_using_epic_launcher: false,
-      },
-      auth_provider: 'dev',
-    } satisfies AuthenticationRequest)
+    .post<AuthenticateResponse>(
+      "/api/auth",
+      {
+        credentials: {
+          username: username,
+          secret: secret !== undefined ? generateSecret(secret) : undefined,
+          platform: "win64",
+          pid: 0,
+          system_guid: systemGuid,
+          version: 269701,
+          build: "final",
+          boot_session_guid: bootSessionGuid,
+          is_using_epic_launcher: false,
+        },
+        auth_provider: "dev",
+      } satisfies AuthenticationRequest,
+    )
     .then((response) => response.data);
 };
